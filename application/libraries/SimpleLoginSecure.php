@@ -72,8 +72,7 @@ class SimpleLoginSecure
 		//Insert account into the database
 		$data = array(
 					'email' => $user_email,
-					'password' => $user_pass_hashed,
-					'date' => date('c')
+					'password' => $user_pass_hashed
 				);
 
 		$this->CI->db->set($data); 
