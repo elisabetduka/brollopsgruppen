@@ -38,5 +38,6 @@ class User extends CI_Controller {
 			redirect(base_url.admin(), 'refresh');
 		}else if ($this->form_validation->run() == FALSE) {
 			$this->load->view('user_login', $message);
+		}
 	}
 }
