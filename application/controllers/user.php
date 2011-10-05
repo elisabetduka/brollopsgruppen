@@ -35,9 +35,53 @@ class User extends CI_Controller {
 		}
 		
 		if ($this->session->userdata('logged_in')) {
-			redirect(base_url.admin(), 'refresh');
+			redirect(base_url().'admin', 'refresh');
 		}else if ($this->form_validation->run() == FALSE) {
 			$this->load->view('user_login', $message);
 		}
+	}
+	
+	public function insert_user($message_param = NULL){
+		$this->form_validation->set_rules(
+			'email',
+			'E-mail',
+			'required|valid_email'
+		);
+		$this->form_validation->set_rules(
+			'password',
+			'Password',
+			'required|min_length[6]|matches[password-repeat]'
+		);
+		$this->form_validation->set_rules(
+			'password-repeat',
+			'Repeat password',
+			'required|min_length[6]'
+		);
+		$this->form_validation->set_error_delimiters('', '');
+		$errors = validation_errors();
+		if(!empty($errors)){
+			$message = $errors;
+		} else {
+			$message = $message_param;
+		}
+		if($message = 'email_exists'){
+			$message = 'Email already exists';
+		}
+		if ($this->session->userdata('logged_in')) {
+			redirect(base_url().'admin', 'refresh');
+		}else if ($this->form_validation->run() == FALSE) {
+			$this->load->view('user_insert');
+		} else {
+			$this->load->model('User_model');
+			$this->User_model->insert_user($this->input->post('email'), $this->input->post('password'));
+		}
+		
+		
+	}
+	
+	public function logout(){
+		$this->load->model('User_model');
+		$this->User_model->logout();
+		$this->load->view('logout');
 	}
 }
