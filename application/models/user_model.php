@@ -14,4 +14,8 @@ class User_model extends CI_Model {
 		$this->simpleloginsecure->logout();
 	}
 	
+	function insert_user($email, $password){
+		return $this->simpleloginsecure->create($email, $password);
+	}
+	
 }
