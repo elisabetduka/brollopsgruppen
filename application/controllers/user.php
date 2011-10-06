@@ -36,7 +36,7 @@ class User extends CI_Controller {
 		} */ 
 		$data['logged_in'] = NULL;
 		if ($this->session->userdata('logged_in')) {
-			redirect(base_url().'user/insert_user', 'refresh'); 
+			redirect(base_url().'admin', 'refresh'); 
 		}else if ($this->form_validation->run() == FALSE) {
 			$this->load->view('user_login', /*$message */$data);
 		} else {
