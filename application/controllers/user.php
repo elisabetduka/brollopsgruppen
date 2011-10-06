@@ -34,7 +34,7 @@ class User extends CI_Controller {
 		if ($message == 'not_logged_in'){
 			$message = 'Du måste logga in som admin innan du kan ändra på Bröllopsgruppens sida!';
 		} */ 
-		$data['logged_in'] = NULL;
+		$data['logged_in']['msg'] = NULL;
 		if ($this->session->userdata('logged_in')) {
 			redirect(base_url().'admin', 'refresh'); 
 		}else if ($this->form_validation->run() == FALSE) {
@@ -91,7 +91,7 @@ class User extends CI_Controller {
 		$this->load->model('User_model');
 		$this->User_model->logout();
 		if ($this->session->userdata('logged_in')) {
-			$data['logged_in'] = 'logged_in'; 
+			$data['logged_in']['msg'] = 'logged_in'; 
 			$this->load->view('logout', $data);
 		} else {
 			redirect(base_url().'user/login', 'refresh');

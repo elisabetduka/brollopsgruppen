@@ -4,6 +4,7 @@
 </head>
 
 <?php 
-if($logged_in != NULL){
+
+if($logged_in['msg'] != NULL){
 	echo '<a href="logout">Logga ut</a>';
 } 
