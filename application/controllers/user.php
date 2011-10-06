@@ -4,6 +4,7 @@ class User extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		$this->load->helper('url');
 	}
 
 	public function index()
@@ -22,8 +23,8 @@ class User extends CI_Controller {
 			'Lösenord',
 			'required|min_length[6]'
 		);
-		$this->form_validation->set_error_delimiters('', '');
-		$errors = validation_errors();
+		/*  $this->form_validation->set_error_delimiters('', ''); 
+		 $errors = validation_errors();
 		if(!empty($errors)){
 			$message = $errors;
 		} else {
@@ -32,12 +33,19 @@ class User extends CI_Controller {
 		
 		if ($message == 'not_logged_in'){
 			$message = 'Du måste logga in som admin innan du kan ändra på Bröllopsgruppens sida!';
-		}
-		
+		} */ 
+		$data['logged_in'] = NULL;
 		if ($this->session->userdata('logged_in')) {
-			redirect(base_url().'admin', 'refresh');
+			redirect(base_url().'user/insert_user', 'refresh'); 
 		}else if ($this->form_validation->run() == FALSE) {
-			$this->load->view('user_login', $message);
+			$this->load->view('user_login', /*$message */$data);
+		} else {
+			$this->load->model('User_model');
+			if($this->User_model->login($this->input->post('email'), $this->input->post('password'))){
+				redirect(base_url().'user/insert_user', 'refresh');
+			} else {
+				redirect(base_url().'user/login');
+			}
 		}
 	}
 	
@@ -82,6 +90,12 @@ class User extends CI_Controller {
 	public function logout(){
 		$this->load->model('User_model');
 		$this->User_model->logout();
-		$this->load->view('logout');
+		if ($this->session->userdata('logged_in')) {
+			$data['logged_in'] = 'logged_in'; 
+			$this->load->view('logout', $data);
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+		
 	}
 }
