@@ -26,6 +26,7 @@ class Admin extends CI_Controller {
 	 function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('Admin_model');
 	}
 
 
@@ -47,7 +48,6 @@ class Admin extends CI_Controller {
 		);
 		if ($this->session->userdata('logged_in')) {
 			$data['logged_in']['msg'] = 'logged in';
-			$this->load->model('Admin_model');
 			if($this->form_validation->run() == FALSE){
 				$data['logged_in']['content'] = $this->Admin_model->get_footer_content();
 				$this->load->view('update_footer', $data);
@@ -59,4 +59,31 @@ class Admin extends CI_Controller {
 		}
 	
 	}
+	
+	public function update_page($id){
+		$this->form_validation->set_rules(
+			'title',
+			'Rubrik',
+			'required'
+		);
+		$this->form_validation->set_rules(
+			'content',
+			'Innehåll',
+			'required'
+		);
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if($this->form_validation->run() == FALSE){
+				$data['logged_in']['content'] = $this->Admin_model->get_page_content($id);
+				$this->load->view('update_page', $data);
+			} else if($this->Admin_model->update_page($id, $this->input->post('title'), $this->input->post('content'))){
+				redirect(base_url().'admin', 'refresh');
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+		
+	}
+	
+	
 }

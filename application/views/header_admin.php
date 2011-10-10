@@ -15,7 +15,7 @@ if($logged_in['msg'] != NULL){
 ?>
 <div id="admin_menu">
 	<ul id="nav">
-		<li><a href="dashboard">HEM</a></li>
+		<li><a href="index">HEM</a></li>
 		<li>REDIGERA FORMULÄR
 			<ul>
 				<li><a href="">Kontaktformulär</a></li>
@@ -34,7 +34,7 @@ if($logged_in['msg'] != NULL){
 		<li>REDIGERA ÖVRIGT
 			<ul>
 				<li><a href="">Header</a></li>
-				<li><a href="admin/update_footer">Footer</a></li>
+				<li><a href="update_footer">Footer</a></li>
 				<li><a href="">Vänster Sidebar</a></li>
 				<li><a href="">Höger Sidebar</a></li>
 			</ul>
