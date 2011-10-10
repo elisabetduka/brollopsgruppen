@@ -1,0 +1,154 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+@font-face {
+    font-family: "OFLGloudyStMTT";
+    src: url(/brollopsgruppen/fonts/OFLGoudyStMTT.ttf) format("truetype");
+}
+
+body{
+	
+	font-family: "OFLGloudyStMTT";
+	font-size: 0.8em;
+	color: #574C4F;
+	min-width: 800px;
+	max-width: 1300px;
+}
+a{
+	font-family: "OFLGloudyStMTT";
+	text-decoration: none;
+	color: #574C4F;
+	font-size: 1em;
+	font-weight: bold;
+
+}
+
+#logotyp{
+	display: block;
+	width: 662px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+
+#logout{
+	position: absolute;
+	top: 12px;
+	right: 100px;	
+}
+
+#logout a{
+	text-decoration: none;
+}
+
+#admin_menu a{
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1em;
+	text-align: center;
+	list-style-type: none;
+	
+}
+
+#admin_menu {
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+	text-align: center;
+}
+
+/*#header { height:120px; position:relative;
+background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
+#nav { 
+	margin:0px; 
+	padding:0px; 
+	position:absolute; 
+	top: 120px; 
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	color: #574C4F;
+
+}
+
+#nav > li:first{
+	width: 100px;
+}
+
+#nav > li { 
+	list-style-type:none; 
+	float:left; 
+	display:block; 
+	margin:0px 10px; 
+	position:relative; 
+	padding:10px; 
+	width:170px;
+	font-weight: bold;
+}
+
+#nav > li:hover ul { 
+	display:block; 
+}
+
+#nav > li:hover { 
+  /* fallback */
+  background-color: #1a82f7;
+  background: url(images/linear_bg_2.png);
+  background-repeat: repeat-x;
+  
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DEAA21), to(#FFD249));
+  
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #DEAA21, #FFD249);
+  
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #2F2727, #1a82f7);
+  
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #2F2727, #1a82f7);
+  
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #2F2727, #1a82f7);
+
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px; 
+}
+
+#nav li ul { 
+	margin:0px; 
+	padding:0px; 
+	display:none;
+}
+
+#nav li ul li { 
+	list-style-type:none; 
+	margin:10px 0 0 0;
+}
+
+#nav li ul li a { 
+	display:block; 
+	padding:5px 10px; 
+	color:#574C4F;
+	text-decoration:none;
+}
+
+#nav li ul li:hover a { 
+	/*background-color:#DEC890; */
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px;
+	text-decoration: underline;
+}
+
+#nav li span { 
+	cursor:pointer; 
+	margin:0px 10px; 
+	font-weight:bold; 
+}
+
+#admin_message{
+	text-align: center;
+	margin-top: 20px;
+}

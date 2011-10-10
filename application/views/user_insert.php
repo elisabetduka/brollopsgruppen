@@ -1,4 +1,7 @@
 <?php
+
+$this->load->view('header_admin');
+
 echo validation_errors();
 
 echo form_open('user/insert_user/');

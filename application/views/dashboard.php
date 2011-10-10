@@ -1,31 +1,4 @@
 <?php
-$this->load->view('header');
+$this->load->view('header_admin');
+echo'<div id="admin_message"><p>Du är nu i admins dashboard. Härifrån kan du redigera alla sidor på Bröllopsgruppen. Välj i menyn ovan vad du vill redigera!</p></div>';
 ?>
-
-<div id="admin_menu">
-	<ul>
-		<li>Redigera formulär
-			<ul>
-				<li><a href="">Kontaktformulär</a></li>
-				<li><a href="">Frågeformulär</a></li>
-			</ul>
-		</li>
-		<li>Redigera sidor
-			<ul>
-				<li><a href="">Start</a></li>
-				<li><a href="">Galleri</a></li>
-				<li><a href="">Om Bröllopsgruppen</a></li>
-				<li><a href="">Frågeformulär</a></li>
-				<li><a href="">Kontakt</a></li>
-			</ul>
-		</li>
-		<li>Redigera övrigt
-			<ul>
-				<li><a href="">Header</a></li>
-				<li><a href="admin/update_footer">Footer</a></li>
-				<li><a href="">Vänster Sidebar</a></li>
-				<li><a href="">Höger Sidebar</a></li>
-			</ul>
-		</li>
-	</ul>
-</div>
