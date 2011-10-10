@@ -42,7 +42,7 @@ class User extends CI_Controller {
 		} else {
 			$this->load->model('User_model');
 			if($this->User_model->login($this->input->post('email'), $this->input->post('password'))){
-				redirect(base_url().'user/insert_user', 'refresh');
+				redirect(base_url().'admin', 'refresh');
 			} else {
 				redirect(base_url().'user/login');
 			}
