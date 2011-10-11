@@ -31,6 +31,15 @@ a{
 	margin-left: auto;
 	margin-right: auto;
 	padding-bottom: 20px;
+	padding-top: 20px;
+	z-index: 10;
+}
+
+#backgr{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
 }
 
 #logout{
@@ -109,7 +118,6 @@ a{
 #admin_menu {
 	margin-left: auto;
 	margin-right: auto;
-	width: 850px;
 	text-align: center;
 }
 
@@ -117,18 +125,19 @@ a{
 background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 #nav { 
 	margin:0px; 
-	padding:0px; 
+	padding-left: 100px; 
 	position:absolute; 
 	top: 120px; 
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
 	color: #2E2D2A;
+	padding-top: 20px;
 
 }
 
-#nav > li:first{
-	width: 100px;
+#nav, li:first{
+	margin-left: 5px;
 }
 
 #nav > li { 
@@ -207,5 +216,22 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	width: 720px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -20px;
+	margin-top: -10px;
+}
+
+#update_footer{
+	position: absolute;
+	bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#update_footer, textarea{
+	width: 500px;
+	height: 40px;
+}
+
+#update_footer, input{
+	float: left;
+	display: inline;
 }

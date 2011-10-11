@@ -12,3 +12,5 @@ if($logged_in['msg'] != NULL){
 } 
 ?>
 <img id="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
+<img id="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
+

@@ -5,6 +5,7 @@
 
 </head>
 <body>
+	<img id="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
 	<img id="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
 
 <?php 
