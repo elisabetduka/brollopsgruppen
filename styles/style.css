@@ -46,7 +46,7 @@ a{
 	position: absolute;
 	top: 12px;
 	right: 100px;	
-	padding: 10px;
+	padding: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color: #1a82f7;
@@ -67,9 +67,11 @@ a{
   
   /* Opera 11.10+ */
   background: -o-linear-gradient(top, #FFD249, #DEAA21);
+/*
 
 	-moz-border-radius:10px; 
 	-webkit-border-radius:10px; 
+*/
 }
 
 #logout a{
@@ -77,33 +79,30 @@ a{
 }
 
 #logout:hover{
-		position: absolute;
+	position: absolute;
 	top: 12px;
 	right: 100px;	
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
-	background-color: #1a82f7;
-  background: url(images/linear_bg_2.png);
-  background-repeat: repeat-x;
-  
-  /* Safari 4-5, Chrome 1-9 */
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DEAA21), to(#FFD249));
-  
-  /* Safari 5.1, Chrome 10+ */
-  background: -webkit-linear-gradient(top, #DEAA21, #FFD249);
-  
-  /* Firefox 3.6+ */
-  background: -moz-linear-gradient(top, #DEAA21, #FFD249);
-  
-  /* IE 10 */
-  background: -ms-linear-gradient(top, #DEAA21, #FFD249);
-  
-  /* Opera 11.10+ */
-  background: -o-linear-gradient(top, #DEAA21, #FFD249);
+	background-repeat: repeat-x;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DEAA21), to(#FFD249));
+	background: -webkit-linear-gradient(top, #DEAA21, #FFD249);
+	background: -moz-linear-gradient(top, #DEAA21, #FFD249);
+	background: -ms-linear-gradient(top, #DEAA21, #FFD249);
+	background: -o-linear-gradient(top, #DEAA21, #FFD249);
+}
 
-	-moz-border-radius:10px; 
-	-webkit-border-radius:10px; 
+#login{
+	float: right;
+	padding: 10px;
+	margin-top: -100px;
+	width: 10em;
+	margin-right: 1em;
+}
+
+#login input[type=submit]{
+	float: right;
 }
 
 #admin_menu a{
@@ -221,17 +220,25 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 #update_footer{
 	position: absolute;
-	bottom: 10px;
+	bottom: 20px;
+	left: 20%;
 	margin-left: auto;
 	margin-right: auto;
+	display: inline;
+	float: left;
+	padding-top: 80px;
+	vertical-align:text-bottom;
 }
 
 #update_footer, textarea{
-	width: 500px;
-	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 1.6em;
+	vertical-align:text-bottom;
 }
-
-#update_footer, input{
+/*
+#update_footer, input[type=submit]{
 	float: left;
 	display: inline;
-}
+	padding: 5px;
+}*/
