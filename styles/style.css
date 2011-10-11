@@ -12,14 +12,14 @@ body{
 	
 	font-family: "OFLGloudyStMTT";
 	font-size: 0.8em;
-	color: #574C4F;
+	color: #2E2D2A;
 	min-width: 800px;
 	max-width: 1300px;
 }
 a{
 	font-family: "OFLGloudyStMTT";
 	text-decoration: none;
-	color: #574C4F;
+	color: #2E2D2A;
 	font-size: 1em;
 	font-weight: bold;
 
@@ -37,10 +37,64 @@ a{
 	position: absolute;
 	top: 12px;
 	right: 100px;	
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #1a82f7;
+  background: url(images/linear_bg_2.png);
+  background-repeat: repeat-x;
+  
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFD249), to(#DEAA21));
+  
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #FFD249, #DEAA21);
+  
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #FFD249, #DEAA21);
+  
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #FFD249, #DEAA21);
+  
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #FFD249, #DEAA21);
+
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px; 
 }
 
 #logout a{
 	text-decoration: none;
+}
+
+#logout:hover{
+		position: absolute;
+	top: 12px;
+	right: 100px;	
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #1a82f7;
+  background: url(images/linear_bg_2.png);
+  background-repeat: repeat-x;
+  
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DEAA21), to(#FFD249));
+  
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #DEAA21, #FFD249);
+  
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #DEAA21, #FFD249);
+  
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #DEAA21, #FFD249);
+  
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #DEAA21, #FFD249);
+
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px; 
 }
 
 #admin_menu a{
@@ -69,7 +123,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
-	color: #574C4F;
+	color: #2E2D2A;
 
 }
 
@@ -131,7 +185,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 #nav li ul li a { 
 	display:block; 
 	padding:5px 10px; 
-	color:#574C4F;
+	color:#2E2D2A;
 	text-decoration:none;
 }
 
@@ -150,5 +204,8 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 #admin_message{
 	text-align: center;
-	margin-top: 20px;
+	width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -20px;
 }
