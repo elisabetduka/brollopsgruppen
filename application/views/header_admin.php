@@ -2,6 +2,7 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="/brollopsgruppen/styles/style.css"/>
+	<link rel="shortcut icon" type="image/png" href="/brollopsgruppen/images/tiara.png">
 
 </head>
 <body>
