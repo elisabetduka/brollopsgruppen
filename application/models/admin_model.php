@@ -46,4 +46,14 @@ class Admin_model extends CI_Model {
 		return $result_array;
 	}
 	
+	function get_pages(){
+		$result = $this->db->get('page');
+		
+		$result_array[] = NULL;
+		foreach($result->result() as $row){
+			$result_array[] = $row;
+		}
+		return $result_array;
+	}
+	
 }

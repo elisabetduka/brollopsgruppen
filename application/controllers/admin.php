@@ -33,6 +33,7 @@ class Admin extends CI_Controller {
 	public function index(){
 		if ($this->session->userdata('logged_in')) {
 			$data['logged_in']['msg'] = 'logged in';
+			$data['logged_in']['pages'] = $this->Admin_model->get_pages();
 			$this->load->view('dashboard', $data);
 		} else {
 			redirect(base_url().'user/login', 'refresh');

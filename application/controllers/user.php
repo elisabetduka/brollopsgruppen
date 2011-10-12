@@ -12,7 +12,7 @@ class User extends CI_Controller {
 			$this->load->view('welcome_message');
 		}
 		
-	public function login($message_param = null){
+	public function login(){
 		$this->form_validation->set_rules(
 			'email',
 			'E-mail',
@@ -23,22 +23,11 @@ class User extends CI_Controller {
 			'Lösenord',
 			'required|min_length[6]'
 		);
-		/*  $this->form_validation->set_error_delimiters('', ''); 
-		 $errors = validation_errors();
-		if(!empty($errors)){
-			$message = $errors;
-		} else {
-			$message = $message_param;
-		}
-		
-		if ($message == 'not_logged_in'){
-			$message = 'Du måste logga in som admin innan du kan ändra på Bröllopsgruppens sida!';
-		} */ 
 		$data['logged_in']['msg'] = NULL;
 		if ($this->session->userdata('logged_in')) {
 			redirect(base_url().'admin', 'refresh'); 
 		}else if ($this->form_validation->run() == FALSE) {
-			$this->load->view('user_login', /*$message */$data);
+			$this->load->view('user_login', $data);
 		} else {
 			$this->load->model('User_model');
 			if($this->User_model->login($this->input->post('email'), $this->input->post('password'))){
@@ -49,7 +38,7 @@ class User extends CI_Controller {
 		}
 	}
 	
-	public function insert_user($message_param = NULL){
+	public function insert_user(){
 		$this->form_validation->set_rules(
 			'email',
 			'E-mail',
@@ -65,16 +54,6 @@ class User extends CI_Controller {
 			'Repeat password',
 			'required|min_length[6]'
 		);
-		$this->form_validation->set_error_delimiters('', '');
-		$errors = validation_errors();
-		if(!empty($errors)){
-			$message = $errors;
-		} else {
-			$message = $message_param;
-		}
-		if($message = 'email_exists'){
-			$message = 'Email already exists';
-		}
 		if ($this->session->userdata('logged_in')) {
 			redirect(base_url().'admin', 'refresh');
 		}else if ($this->form_validation->run() == FALSE) {

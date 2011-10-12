@@ -8,11 +8,12 @@
 	<img id="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
 
 <?php 
-
 if($logged_in['msg'] != NULL){
 	echo '<div id="logout"><a href="logout">Logga ut</a></div>';
 } 
+
 ?>
+
 <div id="admin_menu">
 	<ul id="nav">
 		<li><a href="index">HEM</a></li>
@@ -24,11 +25,17 @@ if($logged_in['msg'] != NULL){
 		</li>
 		<li>REDIGERA SIDOR
 			<ul>
-				<li><a href="">Start</a></li>
+			<?php foreach($logged_in['pages'] as $page){	
+				if($page != NULL){
+					echo "<li><a href='update_page/$page->id'>$page->title</a></li>";
+				}
+				
+			} ?>
+				<!-- <li><a href="">Start</a></li>
 				<li><a href="">Galleri</a></li>
 				<li><a href="">Om Bröllopsgruppen</a></li>
 				<li><a href="">Frågeformulär</a></li>
-				<li><a href="">Kontakt</a></li>
+				<li><a href="">Kontakt</a></li> -->
 			</ul>
 		</li>
 		<li>REDIGERA ÖVRIGT
@@ -39,5 +46,6 @@ if($logged_in['msg'] != NULL){
 				<li><a href="">Höger Sidebar</a></li>
 			</ul>
 		</li>
+		<li>SKAPA NY SIDA</li>
 	</ul>
 </div>
