@@ -11,6 +11,13 @@ if($logged_in['msg'] != NULL){
 	echo '<a href="logout">Logga ut</a>';
 } 
 ?>
-<img id="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
-<img id="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
+<img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
+<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
+
+<!--Att flytta på så snart vi har en footer, men jag behöver något att styla så länge*/-->
+<div class="footer">
+	<div class="wrap">
+		<p>© Bröllopsgruppen 2011  |  info@brollopsgruppen.se  |  Tel: 08 - 10 20 30</p>
+	</div>
+</div>
 

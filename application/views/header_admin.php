@@ -5,8 +5,8 @@
 
 </head>
 <body>
-	<img id="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
-	<img id="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
+	<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
+	<img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
 
 <?php 
 if($logged_in['msg'] != NULL){
@@ -51,4 +51,12 @@ if($logged_in['msg'] != NULL){
 		</li>
 		<li>SKAPA NY SIDA</li>
 	</ul>
+</div>
+
+<!--Att flytta på så snart vi har en footer, men jag behöver något att styla så länge-->
+<div class="footer">
+	<div class="wrap">
+		<img class="footer_image" src="/brollopsgruppen/images/border.jpg" />
+		<p>© Bröllopsgruppen 2011  |  info@brollopsgruppen.se  |  Tel: 08 - 10 20 30</p>
+	</div>
 </div>
