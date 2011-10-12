@@ -43,13 +43,14 @@ a{
 }
 
 #logout{
+	
 	position: absolute;
 	top: 12px;
 	right: 100px;	
 	padding: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
-	background-repeat: repeat-x;
+	height: 1.6em;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFD249), to(#DEAA21));
 	background: -webkit-linear-gradient(top, #FFD249, #DEAA21);
 	background: -moz-linear-gradient(top, #FFD249, #DEAA21);
@@ -62,12 +63,7 @@ a{
 #logout a{
 	text-decoration: none;
 }
-
 #logout:hover{	
-	padding: 5px;
-	padding-left: 20px;
-	padding-right: 20px;
-	background-repeat: repeat-x;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DEAA21), to(#FFD249));
 	background: -webkit-linear-gradient(top, #DEAA21, #FFD249);
 	background: -moz-linear-gradient(top, #DEAA21, #FFD249);

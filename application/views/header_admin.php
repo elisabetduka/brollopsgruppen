@@ -6,9 +6,10 @@
 
 </head>
 <body>
-	<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
-	<img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
-
+	<div id="header">
+		<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
+		<img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
+	</div>
 <?php 
 if($logged_in['msg'] != NULL){
 	echo '<div id="logout"><a href="logout">Logga ut</a></div>';
