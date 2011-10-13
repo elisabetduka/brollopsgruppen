@@ -61,6 +61,13 @@ class Admin extends CI_Controller {
 	
 	}
 	
+	public function show_footer(){
+		$this->load->model('Admin_model');
+		$data['footer'] = $this->Admin_model->get_footer_content();
+		$this->load->view('show_footer', $data);
+		
+	}
+	
 	public function update_page($id){
 		$this->form_validation->set_rules(
 			'title',
