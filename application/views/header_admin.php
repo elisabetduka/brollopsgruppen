@@ -53,10 +53,3 @@ if($logged_in['msg'] != NULL){
 	</ul>
 </div>
 
-<!--Att flytta på så snart vi har en footer, men jag behöver något att styla så länge-->
-<div class="footer">
-	<div class="wrap">
-		<img class="footer_image" src="/brollopsgruppen/images/border.jpg" />
-		<p>© Bröllopsgruppen 2011  |  info@brollopsgruppen.se  |  Tel: 08 - 10 20 30</p>
-	</div>
-</div>
