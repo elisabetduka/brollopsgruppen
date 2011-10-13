@@ -8,9 +8,13 @@
 <body>
 	<div id="header">
 		<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
-		<img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
+		<a href="<?php base_url().'admin';?>"><img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" /></a>
 	</div>
 <?php 
+
+$this->load->model('Admin_model');
+$pages = $this->Admin_model->get_pages();
+
 $url_base_user = base_url().'user';
 if($logged_in['msg'] != NULL){
 	echo "<div id='logout'><a href='$url_base_user/logout'>Logga ut</a></div>";
@@ -31,7 +35,7 @@ if($logged_in['msg'] != NULL){
 			<ul>
 			<?php 
 			$url_base_admin = base_url().'admin';
-			foreach($logged_in['pages'] as $page){
+			foreach($pages as $page){
 				
 				if($page != NULL){
 					echo "<li><a href='$url_base_admin/update_page/$page->id'>$page->title</a></li>";
