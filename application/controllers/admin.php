@@ -33,7 +33,6 @@ class Admin extends CI_Controller {
 	public function index(){
 		if ($this->session->userdata('logged_in')) {
 			$data['logged_in']['msg'] = 'logged in';
-			$data['logged_in']['pages'] = $this->Admin_model->get_pages();
 			$this->load->view('dashboard', $data);
 		} else {
 			redirect(base_url().'user/login', 'refresh');
@@ -90,6 +89,29 @@ class Admin extends CI_Controller {
 			redirect(base_url().'user/login', 'refresh');
 		}
 		
+	}
+	
+	public function create_page(){
+		$this->form_validation->set_rules(
+			'title',
+			'Rubrik',
+			'required'
+		);
+		$this->form_validation->set_rules(
+			'content',
+			'Innehåll',
+			'required'
+		);
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if($this->form_validation->run() == FALSE){
+				$this->load->view('create_page', $data);
+			} else if($this->Admin_model->create_page($this->input->post('title'), $this->input->post('content'))){
+				redirect(base_url().'admin', 'refresh');
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
 	}
 	
 	

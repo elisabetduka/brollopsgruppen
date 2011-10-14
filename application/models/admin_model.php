@@ -56,4 +56,15 @@ class Admin_model extends CI_Model {
 		return $result_array;
 	}
 	
+	function create_page($title, $content){
+		$data = array(
+		   'title' => $title ,
+		   'content' => $content
+		);
+
+		if($this->db->insert('page', $data)){
+			return true;
+		}
+	}
+	
 }

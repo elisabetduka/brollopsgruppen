@@ -53,7 +53,7 @@ if($logged_in['msg'] != NULL){
 				<li><a href="">Höger Sidebar</a></li>
 			</ul>
 		</li>
-		<li>SKAPA NY SIDA</li>
+		<li><a href="<?php echo $url_base_admin;?>/create_page">SKAPA NY SIDA</a></li>
 	</ul>
 </div>
 
