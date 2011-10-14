@@ -1,13 +1,9 @@
--- Adminer 3.2.2 MySQL dump
+-- Adminer 3.3.3 MySQL dump
 
 SET NAMES utf8;
 SET foreign_key_checks = 0;
 SET time_zone = 'SYSTEM';
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
-
-DROP DATABASE IF EXISTS `brollopsgruppen`;
-CREATE DATABASE `brollopsgruppen` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
-USE `brollopsgruppen`;
 
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
@@ -56,6 +52,27 @@ CREATE TABLE `image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
+DROP TABLE IF EXISTS `image_image_position`;
+CREATE TABLE `image_image_position` (
+  `imgage_id` int(10) unsigned NOT NULL,
+  `image_position_id` int(11) NOT NULL,
+  KEY `imgage_id` (`imgage_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+DROP TABLE IF EXISTS `image_position`;
+CREATE TABLE `image_position` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `image_position` (`id`, `name`) VALUES
+(1,	'header'),
+(2,	'gallery'),
+(3,	'left'),
+(4,	'right');
+
 DROP TABLE IF EXISTS `page`;
 CREATE TABLE `page` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -84,4 +101,4 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
--- 2011-10-04 16:32:11
+-- 2011-10-14 13:42:38
