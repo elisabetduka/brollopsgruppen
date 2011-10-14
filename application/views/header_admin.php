@@ -11,8 +11,9 @@
 		<img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
 	</div>
 <?php 
+$url_base_user = base_url().'user';
 if($logged_in['msg'] != NULL){
-	echo '<div id="logout"><a href="logout">Logga ut</a></div>';
+	echo "<div id='logout'><a href='$url_base_user/logout'>Logga ut</a></div>";
 } 
 
 ?>
