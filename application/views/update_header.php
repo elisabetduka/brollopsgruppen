@@ -1,4 +1,6 @@
 <?php 
+
+$this->load->view('header_admin');
 echo $logged_in['errors']['error'];
 
 echo form_open_multipart('admin/update_header');?>

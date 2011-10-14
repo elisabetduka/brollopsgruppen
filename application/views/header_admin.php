@@ -6,15 +6,22 @@
 
 </head>
 <body>
+<?php 
+$this->load->model('Admin_model');
+$file = $this->Admin_model->get_header();
+
+$link = strstr($file[1]->imglink, 'brollopsgruppen');
+
+?>
 	<div id="header">
 		<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
-		<a href="<?php base_url().'admin';?>"><img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" /></a>
+		<a href="<?php base_url().'admin';?>"><img class="logotyp" src="/<?php echo $link;?>" alt="Bröllopsgruppen" /></a>
 	</div>
 <?php 
 
-$this->load->model('Admin_model');
-$pages = $this->Admin_model->get_pages();
 
+$pages = $this->Admin_model->get_pages();
+$url_base_admin = base_url().'admin';
 $url_base_user = base_url().'user';
 if($logged_in['msg'] != NULL){
 	echo "<div id='logout'><a href='$url_base_user/logout'>Logga ut</a></div>";
@@ -24,7 +31,7 @@ if($logged_in['msg'] != NULL){
 
 <div id="admin_menu">
 	<ul id="nav">
-		<li><a href="index">HEM</a></li>
+		<li><a href="<?php echo $url_base_admin;?>/index">HEM</a></li>
 		<li>REDIGERA FORMULÄR
 			<ul>
 				<li><a href="">Kontaktformulär</a></li>
@@ -34,7 +41,7 @@ if($logged_in['msg'] != NULL){
 		<li>REDIGERA SIDOR
 			<ul>
 			<?php 
-			$url_base_admin = base_url().'admin';
+			
 			foreach($pages as $page){
 				
 				if($page != NULL){
