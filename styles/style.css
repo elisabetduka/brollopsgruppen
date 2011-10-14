@@ -222,6 +222,10 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	height: 1.6em;
 }
 
+#create_question {
+	margin-top: 50px;
+}
+
 .wrap {
 	position:relative;
 	margin:0 auto;

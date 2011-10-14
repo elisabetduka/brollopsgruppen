@@ -138,5 +138,40 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function create_question(){
+		$this->form_validation->set_rules(
+			'question',
+			'Fråga',
+			'required'
+		);
+		$this->form_validation->set_rules(
+			'category',
+			'Kategori',
+			'required'
+		);
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if($this->form_validation->run() == FALSE){
+				$data['logged_in']['questions'] = $this->Admin_model->get_questions();
+				$this->load->view('create_questions', $data);
+			} else if($this->Admin_model->create_question($this->input->post('question'), $this->input->post('category'))){
+				redirect(base_url().'admin', 'refresh');
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
+	public function delete_question($id){
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if($this->Admin_model->delete_question($id)){
+				redirect(base_url().'admin', 'refresh');
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
 	
 }
