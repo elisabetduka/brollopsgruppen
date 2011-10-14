@@ -114,5 +114,29 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function update_header(){
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '100';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+
+		$this->load->library('upload', $config);
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if(! $this->upload->do_upload()){
+				$data['logged_in']['errors'] = array('error' => $this->upload->display_errors());
+				$this->load->view('update_header', $data);
+			} else if($this->upload->do_upload()){
+				$file_information = $this->upload->data();
+				if($this->Admin_model->update_header($file_information['file_name'], $file_information['full_path'])){
+					redirect(base_url().'admin', 'refresh');
+				}
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
 	
 }

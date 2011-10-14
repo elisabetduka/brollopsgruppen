@@ -47,7 +47,7 @@ if($logged_in['msg'] != NULL){
 		</li>
 		<li>REDIGERA ÖVRIGT
 			<ul>
-				<li><a href="">Header</a></li>
+				<li><a href="<?php echo $url_base_admin;?>/update_header">Header</a></li>
 				<li><a href="<?php echo $url_base_admin;?>/update_footer">Footer</a></li>
 				<li><a href="">Vänster Sidebar</a></li>
 				<li><a href="">Höger Sidebar</a></li>

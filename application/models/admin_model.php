@@ -67,4 +67,16 @@ class Admin_model extends CI_Model {
 		}
 	}
 	
+	function update_header($file_name, $file_path){
+		$data = array(
+			'name' => $file_name, 
+			'imglink' => $file_path
+		);
+		$this->db->where('id', 1);
+		if($this->db->update('image', $data)){
+			return true;
+		} 
+		
+	}
+	
 }
