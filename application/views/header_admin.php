@@ -29,24 +29,21 @@ if($logged_in['msg'] != NULL){
 		<li>REDIGERA SIDOR
 			<ul>
 			<?php 
+			$url_base_admin = base_url().'admin';
 			foreach($logged_in['pages'] as $page){
+				
 				if($page != NULL){
-					echo "<li><a href='update_page/$page->id'>$page->title</a></li>";
+					echo "<li><a href='$url_base_admin/update_page/$page->id'>$page->title</a></li>";
 				}
 				
 			} 
 			?>
-				<!-- <li><a href="">Start</a></li>
-				<li><a href="">Galleri</a></li>
-				<li><a href="">Om Bröllopsgruppen</a></li>
-				<li><a href="">Frågeformulär</a></li>
-				<li><a href="">Kontakt</a></li> -->
 			</ul>
 		</li>
 		<li>REDIGERA ÖVRIGT
 			<ul>
 				<li><a href="">Header</a></li>
-				<li><a href="admin/update_footer">Footer</a></li>
+				<li><a href="<?php echo $url_base_admin;?>/update_footer">Footer</a></li>
 				<li><a href="">Vänster Sidebar</a></li>
 				<li><a href="">Höger Sidebar</a></li>
 			</ul>
