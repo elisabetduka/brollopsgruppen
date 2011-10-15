@@ -89,4 +89,31 @@ class Admin_model extends CI_Model {
 		return $result_array;
 	}
 	
+	function create_question($question, $category){
+		$data = array(
+			'question' => $question,
+			'category' => $category
+		);
+		
+		if($this->db->insert('question', $data)){
+			return true;
+		}
+	}
+	
+	function get_questions(){
+		$result = $this->db->get('question');
+		
+		$result_array[] = NULL;
+		foreach($result->result() as $row){
+			$result_array[] = $row;
+		}
+		return $result_array;
+	}
+	
+	function delete_question($id){
+		if($this->db->delete('question', array('id' => $id))){
+			return true;
+		}
+	}
+	
 }
