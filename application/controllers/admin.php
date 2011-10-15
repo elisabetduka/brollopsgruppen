@@ -173,5 +173,23 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function config_contact(){
+		$this->form_validation->set_rules(
+			'email',
+			'Email',
+			'required' | 'valid_email'
+		);
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if($this->form_validation->run() == FALSE){
+				$this->load->view('config_contact', $data);
+			} else if($this->Admin_model->config_contact($this->input->post('email'))){
+				redirect(base_url().'admin', 'refresh');
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
 	
 }

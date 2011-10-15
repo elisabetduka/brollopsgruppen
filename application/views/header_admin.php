@@ -34,7 +34,7 @@ if($logged_in['msg'] != NULL){
 		<li><a href="<?php echo $url_base_admin;?>/index">HEM</a></li>
 		<li>REDIGERA FORMULÄR
 			<ul>
-				<li><a href="">Kontaktformulär</a></li>
+				<li><a href="<?php echo $url_base_admin;?>/config_contact">Kontaktformulärsinställningar</a></li>
 				<li><a href="<?php echo $url_base_admin;?>/create_question">Frågeformulär</a></li>
 			</ul>
 		</li>
