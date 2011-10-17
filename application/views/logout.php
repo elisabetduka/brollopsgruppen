@@ -1,2 +1,2 @@
 <?php
-$this->load->view('header_admin');
+$this->load->view('header');
