@@ -7,9 +7,7 @@
 
 <?php 
 
-if($logged_in['msg'] != NULL){
-	echo '<a href="logout">Logga ut</a>';
-} 
+
 ?>
 <img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
 <img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />

@@ -1,6 +1,6 @@
 <?php
 
-$this->load->view('header_admin');
+$this->load->view('header');
 
 echo validation_errors();
 
