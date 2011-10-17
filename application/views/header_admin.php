@@ -13,7 +13,7 @@ $file = $this->Admin_model->get_header();
 $link = strstr($file[1]->imglink, 'brollopsgruppen');
 
 ?>
-	<div id="header">
+	<div class="header">
 		<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
 		<a href="<?php base_url().'admin';?>"><img class="logotyp" src="/<?php echo $link;?>" alt="Bröllopsgruppen" /></a>
 	</div>
@@ -34,7 +34,7 @@ if($logged_in['msg'] != NULL){
 		<li><a href="<?php echo $url_base_admin;?>/index">HEM</a></li>
 		<li>REDIGERA FORMULÄR
 			<ul>
-				<li><a href="<?php echo $url_base_admin;?>/config_contact">Kontaktformulärsinställningar</a></li>
+				<!--<li><a href="<?php //echo $url_base_admin;?>/config_contact">Kontaktformulärsinställningar</a></li>-->
 				<li><a href="<?php echo $url_base_admin;?>/create_question">Frågeformulär</a></li>
 			</ul>
 		</li>
@@ -60,7 +60,7 @@ if($logged_in['msg'] != NULL){
 				<li><a href="">Höger Sidebar</a></li>
 			</ul>
 		</li>
-		<li><a href="<?php echo $url_base_admin;?>/create_page">SKAPA NY SIDA</a></li>
+		<!--<li><a href="<?php// echo $url_base_admin;?>/create_page">SKAPA NY SIDA</a></li>-->
 	</ul>
 </div>
 

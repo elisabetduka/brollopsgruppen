@@ -5,12 +5,25 @@
 
 </head>
 
-<?php 
 
+<?php 
+$this->load->model('Admin_model');
+$file = $this->Admin_model->get_header();
+
+$link = strstr($file[1]->imglink, 'brollopsgruppen');
 
 ?>
-<img class="logotyp" src="/brollopsgruppen/images/brollopsgruppen-logo.jpg" alt="Bröllopsgruppen" />
-<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
+<div class="header">
+	<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
+	<a href="<?php base_url().'admin';?>"><img class="logotyp" src="/<?php echo $link;?>" alt="Bröllopsgruppen" /></a>
+</div>
+<div id="menu">
+	<ul class="nav">
+		<li><a href="<?php base_url().'admin';?>">HEM</a></li>
+		<li><a href="">GALLERI</a></li>
+		<li><a href="">OM BRÖLLOPSGRUPPEN</a></li>
+		<li><a href="">KONTAKT</a></li>
+</div>
 
 <!--Att flytta på så snart vi har en footer, men jag behöver något att styla så länge-->
 <div class="footer">

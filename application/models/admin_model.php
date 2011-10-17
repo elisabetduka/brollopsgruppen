@@ -56,6 +56,7 @@ class Admin_model extends CI_Model {
 		return $result_array;
 	}
 	
+/*
 	function create_page($title, $content){
 		$data = array(
 		   'title' => $title ,
@@ -66,6 +67,7 @@ class Admin_model extends CI_Model {
 			return true;
 		}
 	}
+*/
 	
 	function update_header($file_name, $file_path){
 		$data = array(
