@@ -60,7 +60,9 @@ class User extends CI_Controller {
 			$this->load->view('user_insert');
 		} else {
 			$this->load->model('User_model');
-			$this->User_model->insert_user($this->input->post('email'), $this->input->post('password'));
+			if($this->User_model->insert_user($this->input->post('email'), $this->input->post('password'))){
+				redirect(base_url().'admin', 'refresh');
+			}
 		}
 		
 		
@@ -71,7 +73,9 @@ class User extends CI_Controller {
 		$this->User_model->logout();
 		if ($this->session->userdata('logged_in')) {
 			$data['logged_in']['msg'] = 'logged_in'; 
-			$this->load->view('logout', $data);
+			if($this->load->view('logout', $data)){
+				redirect(base_url().'user/login', 'refresh');
+			}
 		} else {
 			redirect(base_url().'user/login', 'refresh');
 		}
