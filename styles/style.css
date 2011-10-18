@@ -14,7 +14,7 @@ body{
 	font-size: 0.8em;
 	color: #2E2D2A;
 	min-width: 800px;
-	max-width: 1300px;
+	max-width: 1600px;
 }
 a{
 	font-family: "OFLGloudyStMTT";
@@ -28,8 +28,10 @@ a{
 .logotyp{
 	display: block;
 	width: 662px;
-	margin-left: auto;
-	margin-right: auto;
+	position: absolute;
+	top: 10px;
+	left: 50%;	
+	margin-left: -310px;
 	padding-bottom: 20px;
 	padding-top: 20px;
 	z-index: 10;
@@ -106,17 +108,18 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	margin:0px; 
 	padding-left: 100px; 
 	position:absolute; 
-	top: 130px; 
+	top: 130px;
+	left: 50%;
+	width: 800px;
+	margin-left: -500px;
 	display:block;
-	margin-left: auto;
-	margin-right: auto;
 	color: #2E2D2A;
 	padding-top: 20px;
 
 }
 
 .nav, li:first{
-	margin-left: 5px;
+	margin-left: -5px;
 }
 
 .nav > li { 
@@ -126,8 +129,9 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	margin:0px 10px; 
 	position:relative; 
 	padding:10px; 
-	width:170px;
+	width:160px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .nav > li:hover ul { 
@@ -135,9 +139,6 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 }
 
 .nav > li:hover { 
-  /* fallback */
-  background-color: #1a82f7;
-  background: url(images/linear_bg_2.png);
   background-repeat: repeat-x;
   
   /* Safari 4-5, Chrome 1-9 */
