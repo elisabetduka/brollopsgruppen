@@ -1,9 +1,13 @@
 <html>
 <head>
+<?php $base = base_url(); ?>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="/brollopsgruppen/styles/style.css"/>
 	<link rel="shortcut icon" type="image/png" href="/brollopsgruppen/images/tiara.png">
-
+	<script type="text/javascript" src="<?php echo $base;?>js/jquery-1.6.2.min.js"></script>
+	<script src="<?php echo $base;?>js/nicEdit.js" type="text/javascript"></script>
+	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+						
 </head>
 <body>
 <?php 
