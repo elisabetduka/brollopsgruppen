@@ -14,7 +14,7 @@ class Main extends CI_Controller {
 	}
 	
 	public function show_page($id){
-		$data['page'] = $this->Admin_model->get_page_content($id);
+		$data['page'] = $this->Show_model->get_page_content($id);
 		$this->load->view('show_page', $data);
 	}
 }

@@ -27,6 +27,7 @@ class Admin extends MY_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
+		$this->load->model('Show_model');
 	}
 
 
@@ -49,7 +50,7 @@ class Admin extends MY_Controller {
 		if ($this->session->userdata('logged_in')) {
 			$data['logged_in']['msg'] = 'logged in';
 			if($this->form_validation->run() == FALSE){
-				$data['logged_in']['content'] = $this->Admin_model->get_footer_content();
+				$data['logged_in']['content'] = $this->Show_model->get_footer_content();
 				$this->load->view('update_footer', $data);
 			} else if($this->Admin_model->update_footer($this->input->post('content'))){
 				redirect(base_url().'admin', 'refresh');
@@ -61,7 +62,7 @@ class Admin extends MY_Controller {
 	}
 	
 	public function show_footer(){
-		$data['footer'] = $this->Admin_model->get_footer_content();
+		$data['footer'] = $this->Show_model->get_footer_content();
 		$this->load->view('show_footer', $data);
 		
 	}
@@ -80,7 +81,7 @@ class Admin extends MY_Controller {
 		if($this->session->userdata('logged_in')){
 			$data['logged_in']['msg'] = 'logged in';
 			if($this->form_validation->run() == FALSE){
-				$data['logged_in']['content'] = $this->Admin_model->get_page_content($id);
+				$data['logged_in']['content'] = $this->Show_model->get_page_content($id);
 				$this->load->view('update_page', $data);
 			} else if($this->Admin_model->update_page($id, $this->input->post('title'), $this->input->post('content'))){
 				redirect(base_url().'admin', 'refresh');
@@ -91,6 +92,7 @@ class Admin extends MY_Controller {
 		
 	}
 	
+/*
 	public function create_page(){
 		$this->form_validation->set_rules(
 			'title',
@@ -113,6 +115,7 @@ class Admin extends MY_Controller {
 			redirect(base_url().'user/login', 'refresh');
 		}
 	}
+*/
 	
 	public function update_header(){
 		$config['upload_path'] = './uploads/';
@@ -152,7 +155,7 @@ class Admin extends MY_Controller {
 		if($this->session->userdata('logged_in')){
 			$data['logged_in']['msg'] = 'logged in';
 			if($this->form_validation->run() == FALSE){
-				$data['logged_in']['questions'] = $this->Admin_model->get_questions();
+				$data['logged_in']['questions'] = $this->Show_model->get_questions();
 				$this->load->view('create_questions', $data);
 			} else if($this->Admin_model->create_question($this->input->post('question'), $this->input->post('category'))){
 				redirect(base_url().'admin', 'refresh');
@@ -173,6 +176,7 @@ class Admin extends MY_Controller {
 		}
 	}
 	
+/*
 	public function config_contact(){
 		$this->form_validation->set_rules(
 			'email',
@@ -190,6 +194,7 @@ class Admin extends MY_Controller {
 			redirect(base_url().'user/login', 'refresh');
 		}
 	}
+*/
 	
 	
 }

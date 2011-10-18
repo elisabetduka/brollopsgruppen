@@ -15,15 +15,7 @@ class Admin_model extends CI_Model {
 		}
 	}
 	
-	function get_footer_content(){
-		$result = $this->db->get('footer');
-		
-		$result_array[] = NULL;
-		foreach ($result->result() as $row){
-			$result_array[] = $row->content;
-		}
-		return $result_array;
-	}
+	
 	
 	function update_page($id, $title, $content){
 		$data = array(
@@ -35,27 +27,7 @@ class Admin_model extends CI_Model {
 			return true;
 		} 
 	}
-	
-	function get_page_content($id){
-		$result = $this->db->get_where('page', array('id' => $id));
 		
-		$result_array[] = NULL;
-		foreach($result->result() as $row){
-			$result_array[] = $row;
-		}
-		return $result_array;
-	}
-	
-	function get_pages(){
-		$result = $this->db->get('page');
-		
-		$result_array[] = NULL;
-		foreach($result->result() as $row){
-			$result_array[] = $row;
-		}
-		return $result_array;
-	}
-	
 /*
 	function create_page($title, $content){
 		$data = array(
@@ -80,17 +52,7 @@ class Admin_model extends CI_Model {
 		} 
 		
 	}
-	
-	function get_header(){
-		$result = $this->db->get('image');
 		
-		$result_array[] = NULL;
-		foreach($result->result() as $row){
-			$result_array[] = $row;
-		}
-		return $result_array;
-	}
-	
 	function create_question($question, $category){
 		$data = array(
 			'question' => $question,
@@ -102,15 +64,6 @@ class Admin_model extends CI_Model {
 		}
 	}
 	
-	function get_questions(){
-		$result = $this->db->get('question');
-		
-		$result_array[] = NULL;
-		foreach($result->result() as $row){
-			$result_array[] = $row;
-		}
-		return $result_array;
-	}
 	
 	function delete_question($id){
 		if($this->db->delete('question', array('id' => $id))){
