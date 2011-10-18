@@ -7,10 +7,9 @@
 </head>
 <body>
 <?php 
-$this->load->model('Admin_model');
-$file = $this->Admin_model->get_header();
 
-$link = strstr($file[1]->imglink, 'brollopsgruppen');
+$pages = $header['pages'];
+$link = strstr($header['image'][1]->imglink, 'brollopsgruppen');
 
 ?>
 	<div class="header">
@@ -20,7 +19,7 @@ $link = strstr($file[1]->imglink, 'brollopsgruppen');
 <?php 
 
 
-$pages = $this->Admin_model->get_pages();
+
 $url_base_admin = base_url().'admin';
 $url_base_user = base_url().'user';
 if($logged_in['msg'] != NULL){
@@ -30,7 +29,7 @@ if($logged_in['msg'] != NULL){
 ?>
 
 <div id="admin_menu">
-	<ul id="nav">
+	<ul class="nav">
 		<li><a href="<?php echo $url_base_admin;?>/index">HEM</a></li>
 		<li>REDIGERA FORMULÄR
 			<ul>
