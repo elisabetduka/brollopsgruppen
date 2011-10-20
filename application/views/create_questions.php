@@ -10,13 +10,13 @@ foreach($logged_in['questions'] as $question){
 	
 	if($question != NULL){
 		if($question->category == 'infor'){
-		$category = 'Inför';
+		$category = 'Inför Ert bröllop: ';
 		} else if($question->category == 'innan'){
-			$category = 'Innan';
+			$category = 'Före bröllopet: ';
 		} else if($question->category == 'under'){
-			$category = 'Under';
+			$category = 'Under Bröllopet: ';
 		} else if($question->category == 'efter'){
-			$category = 'Efter';
+			$category = 'Efter Bröllopet: ';
 		} else {
 			$category = '';
 		}
@@ -43,10 +43,10 @@ echo form_label('Fråga', 'question');
 echo form_input('question');
 echo '<br />';
 $options = array(
-	'infor'  => 'Inför',
-	'innan'    => 'Innan',
-	'under'   => 'Under',
-	'efter' => 'Efter',
+	'infor'  => 'Inför Ert Bröllopet: ',
+	'innan'    => 'Före bröllopet: ',
+	'under'   => 'Under bröllopet: ',
+	'efter' => 'Efter bröllopet: ',
                 );
 echo form_label('Kategori', 'category');
 echo form_dropdown('category', $options);

@@ -52,6 +52,19 @@ class Admin_model extends CI_Model {
 		} 
 		
 	}
+	
+	function update_left_sidebar($file_name, $file_path){
+		$data = array(
+			'name' => $file_name, 
+			'imglink' => $file_path
+		);
+		//fattar inte vad den gör?
+		$this->db->where('id', 1);
+		if($this->db->update('image', $data)){
+			return true;
+		} 
+		
+	}
 		
 	function create_question($question, $category){
 		$data = array(

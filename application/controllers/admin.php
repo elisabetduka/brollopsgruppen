@@ -141,6 +141,30 @@ class Admin extends MY_Controller {
 		}
 	}
 	
+	public function update_left_sidebar(){
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '100';
+		$config['max_width']  = '150';
+		$config['max_height']  = '200';
+
+		$this->load->library('upload', $config);
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if(! $this->upload->do_upload()){
+				$data['logged_in']['errors'] = array('error' => $this->upload->display_errors());
+				$this->load->view('update_left_sidebar', $data);
+			} else if($this->upload->do_upload()){
+				$file_information = $this->upload->data();
+				if($this->Admin_model->update_left_sidebar($file_information['file_name'], $file_information['full_path'])){
+					redirect(base_url().'admin', 'refresh');
+				}
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
 	public function create_question(){
 		$this->form_validation->set_rules(
 			'question',
