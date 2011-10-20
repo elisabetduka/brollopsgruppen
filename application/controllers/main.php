@@ -17,4 +17,8 @@ class Main extends MY_Controller {
 		$data['page'] = $this->Show_model->get_page_content($id);
 		$this->load->view('show_page', $data);
 	}
+	
+	public function show_contactform(){
+		$this->load->view('show_contactform');
+	}
 }
