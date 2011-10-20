@@ -1,9 +1,13 @@
--- Adminer 3.3.3 MySQL dump
+-- Adminer 3.2.2 MySQL dump
 
 SET NAMES utf8;
 SET foreign_key_checks = 0;
 SET time_zone = 'SYSTEM';
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP DATABASE IF EXISTS `brollopsgruppen`;
+CREATE DATABASE `brollopsgruppen` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+USE `brollopsgruppen`;
 
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
@@ -50,13 +54,11 @@ CREATE TABLE `image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) COLLATE utf8_bin NOT NULL,
   `imglink` varchar(200) COLLATE utf8_bin NOT NULL,
-  `type` enum('header','sidebar_left','sidebar_right','gallery') COLLATE utf8_bin NOT NULL,
-  `importance` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-INSERT INTO `image` (`id`, `name`, `imglink`, `type`, `importance`) VALUES
-(1,	'brollopsgruppen-logo21.jpg',	'C:/wamp/www/brollopsgruppen/uploads/brollopsgruppen-logo21.jpg',	'header',	0);
+INSERT INTO `image` (`id`, `name`, `imglink`) VALUES
+(1,	'brollopsgruppen-logo21.jpg',	'C:/wamp/www/brollopsgruppen/uploads/brollopsgruppen-logo21.jpg');
 
 DROP TABLE IF EXISTS `page`;
 CREATE TABLE `page` (
@@ -64,7 +66,7 @@ CREATE TABLE `page` (
   `title` varchar(200) COLLATE utf8_bin NOT NULL,
   `content` longtext COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT INTO `page` (`id`, `title`, `content`) VALUES
 (1,	'Start',	'Lägger in lite testdata och gör om igen'),
@@ -77,7 +79,7 @@ CREATE TABLE `question` (
   `question` varchar(250) COLLATE utf8_bin NOT NULL,
   `category` varchar(200) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT INTO `question` (`id`, `question`, `category`) VALUES
 (1,	'Test fråga',	'infor');
@@ -88,10 +90,9 @@ CREATE TABLE `user` (
   `password` varchar(200) COLLATE utf8_bin NOT NULL,
   `email` varchar(200) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT INTO `user` (`id`, `password`, `email`) VALUES
-(1,	'$2a$08$BDePqKUe5QeC1hf8mRa4Q.L.yJv/LHtgmlqbjJACYOuMNh5jQ5gbm',	'linda.lickander@gmail.com'),
-(2,	'$2a$08$tbyPiwlKXEXGH4G1g6Te6OgaW9cqrbx/FMN3CiJkmQEdefdhvOYty',	'hillamed3@gmail.com');
+(1,	'$2a$08$BDePqKUe5QeC1hf8mRa4Q.L.yJv/LHtgmlqbjJACYOuMNh5jQ5gbm',	'linda.lickander@gmail.com');
 
--- 2011-10-20 13:46:53
+-- 2011-10-15 10:38:53
