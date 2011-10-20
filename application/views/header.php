@@ -14,6 +14,7 @@
 
 $pages = $header['pages'];
 $link = strstr($header['image'][1]->imglink, 'brollopsgruppen');
+$this->load->view('show_sidebar');
 
 ?>
 	<div class="header">

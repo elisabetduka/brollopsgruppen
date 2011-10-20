@@ -1,7 +1,5 @@
 <?php 
 
-/* $this->load->view('header_admin'); */
-
 echo validation_errors();
 
 echo '<div id="show_questions">';
