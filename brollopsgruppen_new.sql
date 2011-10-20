@@ -80,7 +80,13 @@ CREATE TABLE `question` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT INTO `question` (`id`, `question`, `category`) VALUES
-(1,	'Test fråga',	'infor');
+(1,	'Test fråga',	'infor'),
+(2,	'Jag vill ha hjälp med att välja ut inbjudningskort',	'innan'),
+(3,	'jag vill ha hjälp att planera förlovningsfesten',	'infor'),
+(4,	'jag vill ha hjälp med att välja ut bröllopsklänning och /eller kostym',	'innan'),
+(5,	'jag vill ha hjälp med catering under bröllopet',	'under'),
+(6,	'jag vill ha hjälp med att skicka ut tackkort',	'efter'),
+(7,	'jag vill ha hjälp med planering av smekmånad',	'efter');
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -94,4 +100,4 @@ INSERT INTO `user` (`id`, `password`, `email`) VALUES
 (1,	'$2a$08$BDePqKUe5QeC1hf8mRa4Q.L.yJv/LHtgmlqbjJACYOuMNh5jQ5gbm',	'linda.lickander@gmail.com'),
 (2,	'$2a$08$tbyPiwlKXEXGH4G1g6Te6OgaW9cqrbx/FMN3CiJkmQEdefdhvOYty',	'hillamed3@gmail.com');
 
--- 2011-10-20 13:46:53
+-- 2011-10-20 15:56:02

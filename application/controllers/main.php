@@ -6,6 +6,7 @@ class Main extends MY_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
+		$this->load->model('Show_model');
 
 	}
 
@@ -20,5 +21,10 @@ class Main extends MY_Controller {
 	
 	public function show_contactform(){
 		$this->load->view('show_contactform');
+	}
+	
+	public function show_questions(){
+		$data['question'] = $this->Show_model->get_questions();
+		$this->load->view('show_questions', $data);
 	}
 }

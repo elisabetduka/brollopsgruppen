@@ -58,11 +58,14 @@ class Admin_model extends CI_Model {
 			'name' => $file_name, 
 			'imglink' => $file_path
 		);
-		//fattar inte vad den gör?
+/*
+		//fast den ska ju inte skriva över gamla bilder väl? utan 
+		//fast den ska ju inte skriva över gamla bilder väl? utan 
 		$this->db->where('id', 1);
 		if($this->db->update('image', $data)){
 			return true;
 		} 
+*/
 		
 	}
 		

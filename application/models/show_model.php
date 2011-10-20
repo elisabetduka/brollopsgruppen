@@ -49,9 +49,9 @@ class Show_model extends CI_Model {
 	function get_questions(){
 		$result = $this->db->get('question');
 		
-		$result_array[] = NULL;
+		$result_array = array();
 		foreach($result->result() as $row){
-			$result_array[] = $row;
+			$result_array[$row->category][] = $row;
 		}
 		return $result_array;
 	}

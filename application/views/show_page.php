@@ -1,5 +1,5 @@
 <?php
-$this->load->view('header');
+//$this->load->view('header');
 ?>
 <div class="content_header">
 	<h2><?php $title = $page[1]->title; echo $title; ?></h2>

@@ -252,7 +252,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 .content_header{
 	position: absolute;
-	top: 200px;
+	top: 220px;
 	left: 50%;
 	text-align: center;
 	width: 700px;
@@ -261,7 +261,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 .content_main{
 	position: absolute;
-	top: 280px;
+	top: 260px;
 	left: 50%;
 	text-align: left;
 	width: 700px;
