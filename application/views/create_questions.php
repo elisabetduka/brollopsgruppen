@@ -1,10 +1,10 @@
 <?php 
 
 echo validation_errors();
-
+print_r($question);
 echo '<div id="show_questions">';
 
-foreach($logged_in['questions'] as $question){
+foreach($question as $category => $q) {
 	
 	if($question != NULL){
 		if($question->category == 'infor'){
@@ -20,11 +20,11 @@ foreach($logged_in['questions'] as $question){
 		}
 	
 	
-		echo 'Fråga: ' . $question->question;
+		echo 'Fråga: ' . $q->question;
 		echo '<br />';
-		echo 'Kategori: ' . $category;
+		echo 'Kategori: ' . $category->$q;
 		echo '<br />';
-		$id = $question->id;
+		$id = $q->id;
 		echo "<a href='delete_question/$id'>Ta bort fråga</a>";
 		echo '<br />';
 		echo '<br />';

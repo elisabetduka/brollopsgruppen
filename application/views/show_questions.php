@@ -1,6 +1,4 @@
 <?php
-//$this->load->view('header');
-//print_r($question);
 ?>
 <div class="content_header">
 	<h2>Hur mycket hjälp vill du ha? Välj i listan, så hör vi av oss till dig med ett erbjudande!</h2>
