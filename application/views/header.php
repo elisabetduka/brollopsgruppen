@@ -27,11 +27,11 @@ $this->load->view('show_sidebar');
 
 $url_base_admin = base_url().'admin';
 $url_base_user = base_url().'user';
-if($logged_in['msg'] != NULL){
+if($logged_in['msg'] != NULL && $main != 'main page'){
 	echo "<div id='logout'><a href='$url_base_user/logout'>Logga ut</a></div>";
-} 
+}
 
-if($logged_in['msg'] != NULL){
+if($logged_in['msg'] != NULL && $main != 'main page'){
 ?>
 <div id="admin_menu">
 	<ul class="nav">

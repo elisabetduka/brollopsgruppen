@@ -14,6 +14,13 @@ class MY_Controller extends CI_Controller {
 		} else {
 			$data['logged_in']['msg'] = NULL;
 		}
+ $check_controller = class_exists('Main');
+	if($check_controller){
+		$data['main'] = 'main page';
+	} else{
+		$data['main'] = NULL;
+	}
+
 		$data['header']['image'] = $this->Show_model->get_header();
 		$data['header']['pages'] = $this->Show_model->get_pages();
 		$this->load->view('header', $data);
