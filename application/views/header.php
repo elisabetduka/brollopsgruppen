@@ -11,7 +11,9 @@
 </head>
 <body>
 <?php 
-
+$url_base = base_url();
+$url_base_admin = base_url().'admin';
+$url_base_user = base_url().'user';
 $pages = $header['pages'];
 $link = strstr($header['image'][1]->imglink, 'brollopsgruppen');
 $this->load->view('show_sidebar');
@@ -19,14 +21,13 @@ $this->load->view('show_sidebar');
 ?>
 	<div class="header">
 		<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
-		<a href="<?php base_url().'admin';?>"><img class="logotyp" src="/<?php echo $link;?>" alt="Bröllopsgruppen" /></a>
+		<a href="<?php if($main != 'main page'){echo $url_base_admin;} else {echo $url_base;}?>"><img class="logotyp" src="/<?php echo $link;?>" alt="Bröllopsgruppen" /></a>
 	</div>
 <?php 
 
 
 
-$url_base_admin = base_url().'admin';
-$url_base_user = base_url().'user';
+
 if($logged_in['msg'] != NULL && $main != 'main page'){
 	echo "<div id='logout'><a href='$url_base_user/logout'>Logga ut</a></div>";
 }
