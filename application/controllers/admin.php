@@ -179,7 +179,7 @@ class Admin extends MY_Controller {
 		if($this->session->userdata('logged_in')){
 			$data['logged_in']['msg'] = 'logged in';
 			if($this->form_validation->run() == FALSE){
-				$data['logged_in']['questions'] = $this->Show_model->get_questions();
+				$data['questions'] = $this->Show_model->get_questions();
 				$this->load->view('create_questions', $data);
 			} else if($this->Admin_model->create_question($this->input->post('question'), $this->input->post('category'))){
 				redirect(base_url().'admin', 'refresh');

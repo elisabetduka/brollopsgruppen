@@ -1,30 +1,29 @@
 <?php 
 
 echo validation_errors();
-print_r($question);
+
 echo '<div id="show_questions">';
 
-foreach($question as $category => $q) {
-	
-	if($question != NULL){
-		if($question->category == 'infor'){
+foreach($questions as $category => $q) {
+	if($category != NULL){
+		if($category == 'infor'){
 		$category = 'Inför Ert bröllop: ';
-		} else if($question->category == 'innan'){
+		} else if($category == 'innan'){
 			$category = 'Före bröllopet: ';
-		} else if($question->category == 'under'){
+		} else if($category == 'under'){
 			$category = 'Under Bröllopet: ';
-		} else if($question->category == 'efter'){
+		} else if($category == 'efter'){
 			$category = 'Efter Bröllopet: ';
 		} else {
 			$category = '';
 		}
 	
 	
-		echo 'Fråga: ' . $q->question;
+		echo 'Fråga: ' . $q[0]->question;
 		echo '<br />';
-		echo 'Kategori: ' . $category->$q;
+		echo 'Kategori: ' . $category;
 		echo '<br />';
-		$id = $q->id;
+		$id = $q[0]->id;
 		echo "<a href='delete_question/$id'>Ta bort fråga</a>";
 		echo '<br />';
 		echo '<br />';
