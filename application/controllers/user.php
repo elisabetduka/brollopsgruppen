@@ -69,16 +69,11 @@ class User extends MY_Controller {
 	}
 	
 	public function logout(){
-		$this->load->model('User_model');
+		$this->load->model('User_model'); 
 		$this->User_model->logout();
-		if ($this->session->userdata('logged_in')) {
-			$data['logged_in']['msg'] = 'logged_in'; 
-			if($this->load->view('logout', $data)){
-				redirect(base_url().'user/login', 'refresh');
-			}
-		} else {
-			redirect(base_url().'user/login', 'refresh');
-		}
+		redirect(base_url().'user/login', 'refresh');
+
+
 		
 	}
 }
