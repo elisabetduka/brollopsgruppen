@@ -16,7 +16,7 @@ $url_base_admin = base_url().'admin';
 $url_base_user = base_url().'user';
 $pages = $header['pages'];
 $link = strstr($header['image'][1]->imglink, 'brollopsgruppen');
-$this->load->view('show_sidebar');
+//$this->load->view('show_sidebar');
 
 ?>
 	<div class="header">

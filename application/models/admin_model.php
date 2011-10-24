@@ -70,7 +70,17 @@ class Admin_model extends CI_Model {
 		if($this->db->insert('image', $data)){
 			return true;
 		} 
-
+	}
+	
+	function save_sidebar($image_id, $position){
+		$data = array(
+			'importance' => 1
+		);
+		foreach($image_id as $id){
+			
+			$this->db->where(array('id' => $id));
+			$this->db->update('image', $data);
+		}
 		
 	}
 		

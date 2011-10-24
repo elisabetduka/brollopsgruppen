@@ -26,6 +26,9 @@ class MY_Controller extends CI_Controller {
 		$this->load->view('header', $data);
 		$data_footer['footer'] = $this->Show_model->get_footer_content();
 		$this->load->view('show_footer', $data_footer);
+		$data_sidebar['left'] = $this->Show_model->get_sidebar('left');
+		$data_sidebar['right'] = $this->Show_model->get_sidebar('right');
+		$this->load->view('show_sidebar', $data_sidebar);
 	}
 
 }

@@ -4,10 +4,26 @@
 <div class="content_main">
 <?php 
 
+echo form_open('admin/save_sidebar/'.$position);
+
 foreach($sidebar as $bar){
 	$img_link = strstr($bar->imglink, 'brollopsgruppen');
+	$id = $bar->id;
 	echo "<img src='/$img_link'>";
+	echo '<br />';
+	if($bar->importance == 1){
+		$checked = 'checked="checked"';
+	}
+	echo "<input type='checkbox' name='image[]' value='$id' $checked>";
+	echo '<br />';
+	echo '<br />';
 }
+if($sidebar != NULL){
+	echo form_submit('submit', 'Spara');
+} 
+
+
+echo form_close();
 
 echo $logged_in['errors']['error'];
 

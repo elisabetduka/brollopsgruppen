@@ -167,6 +167,21 @@ class Admin extends MY_Controller {
 		}
 	}
 	
+	public function save_sidebar($position){
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			$images = $this->input->post('image');
+			foreach($images as $image){
+				$img[] = $image;
+			}
+			if($this->Admin_model->save_sidebar($img, $position)){
+				redirect(base_url().'admin', 'refresh');
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
 	public function create_question(){
 		$this->form_validation->set_rules(
 			'question',
