@@ -41,10 +41,11 @@ class Admin_model extends CI_Model {
 	}
 */
 	
-	function update_header($file_name, $file_path){
+	function update_header($file_name, $file_path, $position){
 		$data = array(
 			'name' => $file_name, 
-			'imglink' => $file_path
+			'imglink' => $file_path,
+			'type' => $position
 		);
 		$this->db->where('id', 1);
 		if($this->db->update('image', $data)){
@@ -53,19 +54,23 @@ class Admin_model extends CI_Model {
 		
 	}
 	
-	function update_left_sidebar($file_name, $file_path){
+	function update_sidebar($file_name, $file_path, $position){
+		if($position == 'left'){
+			$position = sidebar_left;
+		} else {
+			$position = sidebar_right;
+		}
 		$data = array(
 			'name' => $file_name, 
-			'imglink' => $file_path
+			'imglink' => $file_path,
+			'type' => $position
 		);
-/*
-		//fast den ska ju inte skriva över gamla bilder väl? utan 
-		//fast den ska ju inte skriva över gamla bilder väl? utan 
+
 		$this->db->where('id', 1);
-		if($this->db->update('image', $data)){
+		if($this->db->insert('image', $data)){
 			return true;
 		} 
-*/
+
 		
 	}
 		

@@ -132,7 +132,7 @@ class Admin extends MY_Controller {
 				$this->load->view('update_header', $data);
 			} else if($this->upload->do_upload()){
 				$file_information = $this->upload->data();
-				if($this->Admin_model->update_header($file_information['file_name'], $file_information['full_path'])){
+				if($this->Admin_model->update_header($file_information['file_name'], $file_information['full_path'], $position = 'header')){
 					redirect(base_url().'admin', 'refresh');
 				}
 			}
@@ -141,7 +141,8 @@ class Admin extends MY_Controller {
 		}
 	}
 	
-	public function update_left_sidebar(){
+	public function update_sidebar($position){
+		$data['position'] = $position;
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '100';
@@ -153,10 +154,11 @@ class Admin extends MY_Controller {
 			$data['logged_in']['msg'] = 'logged in';
 			if(! $this->upload->do_upload()){
 				$data['logged_in']['errors'] = array('error' => $this->upload->display_errors());
-				$this->load->view('update_left_sidebar', $data);
+				$data['sidebar'] = $this->Show_model->get_sidebar($position);
+				$this->load->view('update_sidebar', $data);
 			} else if($this->upload->do_upload()){
 				$file_information = $this->upload->data();
-				if($this->Admin_model->update_left_sidebar($file_information['file_name'], $file_information['full_path'])){
+				if($this->Admin_model->update_sidebar($file_information['file_name'], $file_information['full_path'], $position)){
 					redirect(base_url().'admin', 'refresh');
 				}
 			}
@@ -219,6 +221,5 @@ class Admin extends MY_Controller {
 		}
 	}
 */
-	
 	
 }
