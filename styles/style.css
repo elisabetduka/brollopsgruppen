@@ -46,6 +46,7 @@ a{
 	padding-bottom: 0px;
 	padding-top: 20px;
 	z-index: 10;
+	border: none;
 /*
 	-webkit-box-reflect: below -20px -webkit-gradient(linear, left top, left bottom, from(transparent), to(white));
 */
@@ -130,7 +131,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	display:block;
 	color: #2E2D2A;
 	padding-top: 20px;
-
+	display: inline;
 }
 
 .nav, li:first{
