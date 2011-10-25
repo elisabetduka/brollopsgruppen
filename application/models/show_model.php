@@ -55,4 +55,20 @@ class Show_model extends CI_Model {
 		}
 		return $result_array;
 	}
+	
+	function get_sidebar($position){
+		if($position == 'left'){
+			$position = 'sidebar_left';
+		} else {
+			$position = 'sidebar_right';
+		}
+		
+		$query = $this->db->get_where('image', array('type' => $position));
+		
+		$result_array = array();
+		foreach($query->result() as $row){
+			$result_array[] = $row; 
+		}
+		return $result_array;
+	}
 }
