@@ -148,6 +148,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	width: 160px;
 	text-align: center;
 	display: inline;
+	z-index: 99;
 }
 
 .nav > li:hover ul { 
@@ -276,6 +277,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	text-align: center;
 	width: 700px;
 	margin-left: -350px;
+	z-index: 9;
 }
 
 .content_main{
