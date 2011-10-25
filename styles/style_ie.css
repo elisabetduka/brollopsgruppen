@@ -1,0 +1,50 @@
+#menu .nav a{
+	padding: 0px;
+	margin: 0px;
+	color: red;
+}
+
+#menu .nav {
+	color: #2E2D2A;
+	list-style: none;
+	width: 1500px;
+	margin-left: -750px;
+}
+.first{
+	margin-left: 425px;
+}
+#menu .nav li {
+	float: left;
+	margin-right: 20px;
+}
+
+#admin_menu .nav a{
+	padding: 0px;
+	margin: 0px;
+	color: red;
+}
+
+#admin_menu .nav {
+	background-color: pink;
+	list-style: none;
+	width: 1500px;
+	margin-left: -750px;
+}
+.first{
+	margin-left: 425px;
+}
+#admin_menu .nav li {
+	float: left;
+	margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+

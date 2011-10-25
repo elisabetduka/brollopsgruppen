@@ -3,6 +3,7 @@
 <?php $base = base_url(); ?>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="/brollopsgruppen/styles/style.css"/>
+	<!--[if gte IE 7]><link rel="stylesheet" type="text/css" href="/brollopsgruppen/styles/style_ie.css" />  <![endif]-->
 	<link rel="shortcut icon" type="image/png" href="/brollopsgruppen/images/tiara.png">
 	<script type="text/javascript" src="<?php echo $base;?>js/jquery-1.6.2.min.js"></script>
 	<script src="<?php echo $base;?>js/nicEdit.js" type="text/javascript"></script>
@@ -36,7 +37,7 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 ?>
 <div id="admin_menu">
 	<ul class="nav">
-		<li><a href="<?php echo $url_base_admin;?>/index">HEM</a></li>
+		<li class ="first"><a href="<?php echo $url_base_admin;?>/index">HEM</a></li>
 		<li>REDIGERA FORMULÄR
 			<ul>
 				<!--<li><a href="<?php //echo $url_base_admin;?>/config_contact">Kontaktformulärsinställningar</a></li>-->
@@ -74,7 +75,7 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 
 <div id="menu">
 	<ul class="nav">
-		<li><a href="<?php base_url().'admin';?>">HEM</a></li>
+		<li class="first"><a href="<?php base_url().'admin';?>">HEM</a></li>
 		<li><a href="">GALLERI</a></li>
 		<li><a href="">OM BRÖLLOPSGRUPPEN</a></li>
 		<li><a href="">KONTAKT</a></li>

@@ -23,7 +23,7 @@ class MY_Controller extends CI_Controller {
 
 		$data['header']['image'] = $this->Show_model->get_header();
 		$data['header']['pages'] = $this->Show_model->get_pages();
-		$this->load->view('header', $data);
+		$this->load->view('header',  $data);
 		$data_footer['footer'] = $this->Show_model->get_footer_content();
 		$this->load->view('show_footer', $data_footer);
 		$data_sidebar['left'] = $this->Show_model->get_sidebar('left');

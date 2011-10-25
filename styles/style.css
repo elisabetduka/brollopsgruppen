@@ -202,7 +202,6 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 .nav li span { 
 	cursor:pointer; 
 	margin:0px 10px; 
-	/*font-weight:bold; */
 }
 
 #admin_message{
