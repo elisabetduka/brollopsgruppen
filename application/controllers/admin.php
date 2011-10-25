@@ -155,6 +155,7 @@ class Admin extends MY_Controller {
 			if(! $this->upload->do_upload()){
 				$data['logged_in']['errors'] = array('error' => $this->upload->display_errors());
 				$data['sidebar'] = $this->Show_model->get_sidebar($position);
+				$data['show_sidebar'] = $this->Show_model->get_what_to_show_in_sidebar($position);
 				$this->load->view('update_sidebar', $data);
 			} else if($this->upload->do_upload()){
 				$file_information = $this->upload->data();
