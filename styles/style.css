@@ -74,6 +74,8 @@ a{
 	background: -o-linear-gradient(top, #FFD249, #DEAA21);
 	-moz-border-radius: 5px; 
 	-webkit-border-radius:5px; 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFD249', endColorstr='#DEAA21',GradientType=0 );
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFD249',EndColorStr='#DEAA21')";
 }
 
 #logout a{
@@ -103,7 +105,6 @@ a{
 
 #admin_menu a{
 	text-decoration: none;
-	font-weight: bold;
 	font-size: 1em;
 	text-align: center;
 	list-style-type: none;
@@ -144,7 +145,6 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	position:relative; 
 	padding:10px; 
 	width:160px;
-	font-weight: bold;
 	text-align: center;
 }
 
@@ -162,7 +162,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
   background: -webkit-linear-gradient(top, #DEAA21, #FFD249);
   
   /* Firefox 3.6+ */
-  background: -moz-linear-gradient(top, #DEAA21, #FFD249);
+  background: -moz-linear-gradient(top, #FFD249, #DEAA21);
   
   /* IE 10 */
   background: -ms-linear-gradient(top, #DEAA21, #FFD249);
@@ -251,7 +251,6 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 .header, .footer {
 	width:100%;
-	float:left;
 }
 
 .footer {
