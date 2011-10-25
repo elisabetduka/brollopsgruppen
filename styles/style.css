@@ -4,20 +4,31 @@ padding: 0;
 }
 
 @font-face {
-    font-family: "OFLGloudyStMTT";
-    src: url(/brollopsgruppen/fonts/OFLGoudyStMTT.ttf) format("truetype");
+    font-family: "CharisSILR", "CharisSILB", "CharisSILBI", "CharisSILI";
+    src: url(/brollopsgruppen/fonts/CharisSILR.ttf) format("truetype");
+    src: url(/brollopsgruppen/fonts/CharisSILB.ttf) format("truetype");
+    src: url(/brollopsgruppen/fonts/CharisSILBI.ttf) format("truetype");
+    src: url(/brollopsgruppen/fonts/CharisSILI.ttf) format("truetype");    
+}
+
+b, strong{
+	font-family: CharisSILB;
+}
+
+i{
+	font-family: CharisSILI;
 }
 
 body{
 	
-	font-family: "OFLGloudyStMTT";
+	font-family: "CharisSILR";
 	font-size: 0.8em;
 	color: #2E2D2A;
 	min-width: 800px;
 	max-width: 1600px;
 }
 a{
-	font-family: "OFLGloudyStMTT";
+	font-family: "CharisSILR";
 	text-decoration: none;
 	color: #2E2D2A;
 	font-size: 1em;
@@ -245,8 +256,11 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 .footer {
 	position:fixed;
+	left: 50%;
 	bottom:0;
 	z-index:999999;
+	width: 700px;
+	margin-left: -350px;
 	text-align: center;
 	background-color: white;
 }
@@ -283,7 +297,7 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	min-height: 200px;
 	margin: 10px;
 	float: left;
-	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .left_sidebar{
@@ -296,5 +310,5 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	min-height: 200px;
 	margin: 10px;
 	float: left;
-	margin-bottom: 20px
+	padding-bottom: 20px
 }
