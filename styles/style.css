@@ -31,8 +31,7 @@ a{
 	font-family: "CharisSILR";
 	text-decoration: none;
 	color: #2E2D2A;
-	font-size: 1em;
-	font-weight: bold;
+	font-size: 1em;;
 
 }
 
@@ -135,18 +134,20 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 }
 
 .nav, li:first{
-	margin-left: -5px;
+	margin-left: -20px;
 }
 
 .nav > li { 
-	list-style-type:none; 
-	float:left; 
-	display:block; 
-	margin:0px 10px; 
-	position:relative; 
-	padding:10px; 
-	width:160px;
+	list-style-type: none;
+	list-style: none;
+	float: left; 
+	display: block; 
+	margin: 0px 10px; 
+	position: relative; 
+	padding: 10px; 
+	width: 160px;
 	text-align: center;
+	display: inline;
 }
 
 .nav > li:hover ul { 
