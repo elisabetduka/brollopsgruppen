@@ -14,7 +14,7 @@ foreach($left as $left_bar){
 
 	}
 	$img_link = strstr($left_bar->imglink, 'brollopsgruppen');
-	echo "<img src='/$img_link'>";
+	echo "<img src='/$img_link' max-width='150'>";
 	echo '<br />';
 if($number >= 1){
 	$number--;
@@ -37,7 +37,7 @@ foreach($right as $right_bar){
 	$id_right = $right_bar->id;
 	if($exploded_id_right[$number] == $id_right){
 	$img_link = strstr($right_bar->imglink, 'brollopsgruppen');
-	echo "<img src='/$img_link'>";
+	echo "<img src='/$img_link' max-width='150px'>";
 	echo '<br />';
 	}
 if($number >= 1){
