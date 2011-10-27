@@ -76,7 +76,7 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 
 <div id="menu">
 	<ul class="nav">
-		<li class="first"><a href="<?php echo $url_base_main;?>">HEM</a></li>
+		<li class="first"><a href="<?php echo $url_base;?>">HEM</a></li>
 		<li><a href="">GALLERI</a></li>
 		<li><a href="<?php echo $url_base_main;?>/show_questions/">INTRESSEANMÄLAN</a></li>
 		<li><a href="<?php echo $url_base_main;?>/show_page/3">OM OSS<!--BRÖLLOPSGRUPPEN--></a></li>
