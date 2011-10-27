@@ -15,6 +15,7 @@
 $url_base = base_url();
 $url_base_admin = base_url().'admin';
 $url_base_user = base_url().'user';
+$url_base_main = base_url().'main';
 $pages = $header['pages'];
 $link = strstr($header['image'][1]->imglink, 'brollopsgruppen');
 //$this->load->view('show_sidebar');
@@ -75,10 +76,11 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 
 <div id="menu">
 	<ul class="nav">
-		<li class="first"><a href="<?php base_url().'admin';?>">HEM</a></li>
+		<li class="first"><a href="<?php echo $url_base_main;?>">HEM</a></li>
 		<li><a href="">GALLERI</a></li>
-		<li><a href="">OM BRÖLLOPSGRUPPEN</a></li>
-		<li><a href="">KONTAKT</a></li>
+		<li><a href="<?php echo $url_base_main;?>/show_questions/">INTRESSEANMÄLAN</a></li>
+		<li><a href="<?php echo $url_base_main;?>/show_page/3">OM OSS<!--BRÖLLOPSGRUPPEN--></a></li>
+		<li><a href="<?php echo $url_base_main;?>/show_contactform/">KONTAKT</a></li>
 </div>
 <?php
 }
