@@ -73,14 +73,47 @@ class Admin_model extends CI_Model {
 	}
 	
 	function save_sidebar($image_id, $position){
-		$data = array(
-			'importance' => 1
-		);
+		$id_string = '';
 		foreach($image_id as $id){
-			
-			$this->db->where(array('id' => $id));
-			$this->db->update('image', $data);
+				$id_string = $id . ',' . $id_string;	
 		}
+		$id_string = substr_replace($id_string, '', -1);
+		$data = array(
+			'image_ids' => $id_string
+		); 
+
+		
+		if($position == 'left'){
+			$position = 'sidebar_left';
+		} else {
+			$position = 'sidebar_right';
+		}
+			
+			$this->db->where(array('type' => $position));
+			$this->db->update('sidebar', $data);
+		
+		/* if(count($image_id) != 1 ){
+			$id_string = "";
+			foreach($image_id as $id){
+				$id_string = $id . ' AND( id != ' . $id_string;
+				
+				$lenght = strlen($id_string);
+				//echo $lenght; 
+				 
+				
+				
+			}
+			$lenght = $lenght -1;
+			$id_string = substr_replace($id_string, '', -12);
+		} else {
+			foreach($image_id as $id){
+				$id_string = $id;
+			}
+		} */
+
+			/* $this->db->query("UPDATE image SET importance = 0 WHERE  id != $id_string
+AND type = 'sidebar_right')"); */
+		
 		
 	}
 		

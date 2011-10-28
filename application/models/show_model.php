@@ -71,4 +71,21 @@ class Show_model extends CI_Model {
 		}
 		return $result_array;
 	}
+	
+	function get_what_to_show_in_sidebar($position){
+		if($position == 'left'){
+			$position = 'sidebar_left';
+		} else {
+			$position = 'sidebar_right';
+		}
+		
+		$query = $this->db->get_where('sidebar', array('type' => $position));
+		
+		$result_array = array();
+		foreach($query->result() as $row){
+			$result_array[] = $row; 
+		}
+		return $result_array;
+		
+	}
 }

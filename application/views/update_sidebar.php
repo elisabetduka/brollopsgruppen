@@ -6,17 +6,29 @@
 
 echo form_open('admin/save_sidebar/'.$position);
 
+foreach($show_sidebar as $side){
+$ids = $side->image_ids;
+	$exploded_id = explode(",", $ids);
+}
+$number = count($exploded_id);
+$number = $number - 1;
 foreach($sidebar as $bar){
 	$img_link = strstr($bar->imglink, 'brollopsgruppen');
 	$id = $bar->id;
 	echo "<img src='/$img_link'>";
 	echo '<br />';
-	if($bar->importance == 1){
+	if($exploded_id[$number] == $id){
 		$checked = 'checked="checked"';
+	} else {
+		$checked = '';
 	}
 	echo "<input type='checkbox' name='image[]' value='$id' $checked>";
 	echo '<br />';
 	echo '<br />';
+if($number >= 1){
+	$number--;
+}
+
 }
 if($sidebar != NULL){
 	echo form_submit('submit', 'Spara');

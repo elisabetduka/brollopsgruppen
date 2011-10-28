@@ -28,6 +28,8 @@ class MY_Controller extends CI_Controller {
 		$this->load->view('show_footer', $data_footer);
 		$data_sidebar['left'] = $this->Show_model->get_sidebar('left');
 		$data_sidebar['right'] = $this->Show_model->get_sidebar('right');
+		$data_sidebar['show_sidebar_left'] = $this->Show_model->get_what_to_show_in_sidebar('left');
+		$data_sidebar['show_sidebar_right'] = $this->Show_model->get_what_to_show_in_sidebar('right');
 		$this->load->view('show_sidebar', $data_sidebar);
 	}
 
