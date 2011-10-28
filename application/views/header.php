@@ -57,7 +57,11 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 			foreach($pages as $page){
 				
 				if($page != NULL){
-					echo "<li><a href='$url_base_admin/update_page/$page->id'>$page->title</a></li>";
+					if($page->id == 2){
+						echo "<li><a href='$url_base_admin/update_gallery'>$page->title</a></li>";
+					} else {
+						echo "<li><a href='$url_base_admin/update_page/$page->id'>$page->title</a></li>";
+					}
 				}
 				
 			} 
@@ -81,8 +85,8 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 
 <div id="menu">
 	<ul id="main_nav">
-		<a href="<?php echo $url_base;?>"><li class="active">HEM</li></a>
-		<a href=""><li>GALLERI</li></a>
+		<a href="<?php echo $url_base;?>"><li>HEM</li></a>
+		<a href="<?php echo $url_base_main;?>/show_gallery/"><li>GALLERI</li></a>
 		<a href="<?php echo $url_base_main;?>/show_questions/"><li>INTRESSEANMÄLAN</li></a>
 		<a href="<?php echo $url_base_main;?>/show_page/3"><li>OM OSS<!--BRÖLLOPSGRUPPEN--></li></a>
 		<a href="<?php echo $url_base_main;?>/show_contactform/"><li>KONTAKT</li></a>

@@ -46,4 +46,11 @@ class Main extends MY_Controller {
 			}
 		}
 	}
+	
+	public function show_gallery(){
+		$data['page'] = $this->Show_model->get_page_content(2);
+		$data['show_gallery'] = $this->Show_model->get_gallery('gallery');
+		$data['gallery'] = $this->Show_model->get_what_to_show_in_gallery('gallery');
+		$this->load->view('show_page', $data);
+	}
 }

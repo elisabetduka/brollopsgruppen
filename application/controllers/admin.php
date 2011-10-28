@@ -168,6 +168,34 @@ class Admin extends MY_Controller {
 		}
 	}
 	
+		public function update_gallery(){
+		$data['position'] = 'gallery';
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '100';
+		$config['max_width']  = '150';
+		$config['max_height']  = '200';
+
+		$this->load->library('upload', $config);
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			if(! $this->upload->do_upload()){
+				$data['logged_in']['errors'] = array('error' => $this->upload->display_errors());
+				$data['show_gallery'] = $this->Show_model->get_gallery('gallery');
+				$data['gallery'] = $this->Show_model->get_what_to_show_in_gallery('gallery');
+				$data['logged_in']['content'] = $this->Show_model->get_page_content(2);
+				$this->load->view('update_page', $data);
+			} else if($this->upload->do_upload()){
+				$file_information = $this->upload->data();
+				if($this->Admin_model->update_gallery($file_information['file_name'], $file_information['full_path'], 'gallery')){
+					redirect(base_url().'admin', 'refresh');
+				}
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
 	public function save_sidebar($position){
 		if($this->session->userdata('logged_in')){
 			$data['logged_in']['msg'] = 'logged in';
@@ -176,6 +204,21 @@ class Admin extends MY_Controller {
 				$img[] = $image;
 			}
 			if($this->Admin_model->save_sidebar($img, $position)){
+				redirect(base_url().'admin', 'refresh');
+			}
+		} else {
+			redirect(base_url().'user/login', 'refresh');
+		}
+	}
+	
+	public function save_gallery(){
+		if($this->session->userdata('logged_in')){
+			$data['logged_in']['msg'] = 'logged in';
+			$images = $this->input->post('image');
+			foreach($images as $image){
+				$img[] = $image;
+			}
+			if($this->Admin_model->save_gallery($img, 'gallery')){
 				redirect(base_url().'admin', 'refresh');
 			}
 		} else {

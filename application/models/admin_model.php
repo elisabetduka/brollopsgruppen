@@ -66,7 +66,6 @@ class Admin_model extends CI_Model {
 			'type' => $position
 		);
 
-		$this->db->where('id', 1);
 		if($this->db->insert('image', $data)){
 			return true;
 		} 
@@ -133,6 +132,33 @@ AND type = 'sidebar_right')"); */
 		if($this->db->delete('question', array('id' => $id))){
 			return true;
 		}
+	}
+	
+		function update_gallery($file_name, $file_path, $position){
+		$data = array(
+			'name' => $file_name, 
+			'imglink' => $file_path,
+			'type' => $position
+		);
+
+		if($this->db->insert('image', $data)){
+			return true;
+		} 
+	}
+	
+	function save_gallery($image_id, $position){
+		$id_string = '';
+		foreach($image_id as $id){
+				$id_string = $id . ',' . $id_string;	
+		}
+		$id_string = substr_replace($id_string, '', -1);
+		$data = array(
+			'image_ids' => $id_string
+		); 
+			
+			$this->db->where(array('type' => $position));
+			$this->db->update('gallery', $data);
+			
 	}
 	
 }
