@@ -1,8 +1,13 @@
+<div class="content_header">
+	<h2>Updatera <?php echo 'frågeformuläret' ?></h2>
+</div>
+<div class="content_main">
+
 <?php 
 
 echo validation_errors();
 
-echo '<div id="show_questions">';
+echo '<div id="content_main">';
 
 foreach($questions as $category => $q) {
 	if($category != NULL){
@@ -51,5 +56,7 @@ echo '<br />';
 echo form_submit('submit', 'Spara');
 
 echo form_close();
+
+echo '</div>';
 
 echo '</div>';
