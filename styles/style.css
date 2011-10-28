@@ -93,15 +93,65 @@ a{
 	
 	float: right;
 	padding: 10px;
-	margin-top: 60px;
+	margin-top: 40px;
 	margin-right: 1em;
 }
+
+#insert_user{
+	float: right;
+	padding: 10px;
+	margin-top: 40px;
+	margin-right: 1em;
+}
+
 
 /*
 #login input[type=submit]{
 	float: right;
 }
 */
+
+#main_nav{
+	position: absolute;
+	top: 140px;
+	width: 100%;
+	height: 25px;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DEAA21), to(#FFD249));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #DEAA21, #FFD249);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #FFD249, #DEAA21);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #DEAA21, #FFD249);
+
+	Opera 11.10+ 
+	background: -o-linear-gradient(top, #DEAA21, #FFD249);
+	text-align: center;
+	padding-top: 10px;
+}
+
+#main_nav a{
+	text-decoration: none;
+	list-style-type: none;	
+	padding-left: 20px;
+	padding: 10px;
+}
+
+#main_nav li{
+	display: inline;
+	padding: 10px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+#main_nav li:hover{
+	text-decoration: underline;
+}
 
 #admin_menu a{
 	text-decoration: none;
@@ -156,8 +206,6 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 }
 
 .nav > li:hover { 
-  background-repeat: repeat-x;
-  
   /* Safari 4-5, Chrome 1-9 */
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DEAA21), to(#FFD249));
   

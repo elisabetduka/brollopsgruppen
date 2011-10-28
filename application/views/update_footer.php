@@ -5,7 +5,7 @@
 echo validation_errors();
 
 echo form_open('admin/update_footer/');
-echo '<div id="update_footer"><form>';
+echo '<div class="content_main" id="update_footer"><form>';
 echo form_label('Innehåll', 'content');
 echo form_textarea('content', $logged_in['content'][1]);
 /*echo '<br />';*/
