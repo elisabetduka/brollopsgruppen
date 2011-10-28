@@ -88,7 +88,7 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 		<a href="<?php echo $url_base;?>"><li>HEM</li></a>
 		<a href="<?php echo $url_base_main;?>/show_gallery/"><li>GALLERI</li></a>
 		<a href="<?php echo $url_base_main;?>/show_questions/"><li>INTRESSEANMÄLAN</li></a>
-		<a href="<?php echo $url_base_main;?>/show_page/3"><li>OM OSS<!--BRÖLLOPSGRUPPEN--></li></a>
+		<a href="<?php echo $url_base_main;?>/show_page/3"><li>OM BRÖLLOPSGRUPPEN</li></a>
 		<a href="<?php echo $url_base_main;?>/show_contactform/"><li>KONTAKT</li></a>
 </div>
 <?php
