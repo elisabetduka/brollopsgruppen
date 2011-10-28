@@ -57,7 +57,11 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 			foreach($pages as $page){
 				
 				if($page != NULL){
-					echo "<li><a href='$url_base_admin/update_page/$page->id'>$page->title</a></li>";
+					if($page->id == 2){
+						echo "<li><a href='$url_base_admin/update_gallery'>$page->title</a></li>";
+					} else {
+						echo "<li><a href='$url_base_admin/update_page/$page->id'>$page->title</a></li>";
+					}
 				}
 				
 			} 
