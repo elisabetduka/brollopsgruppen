@@ -101,7 +101,7 @@ a{
 #insert_user{
 	float: right;
 	padding: 10px;
-	margin-top: 20px;
+	margin-top: 0px;
 	margin-right: 1em;
 }
 
@@ -356,8 +356,8 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 .right_sidebar{
 	position: absolute;
-	top: 220px;
-	right: 5%;
+	top: 165px;
+	right: 1%;
 	border: 1px solid black;
 	width: 150px;
 	height: 100%;
@@ -369,8 +369,8 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 
 .left_sidebar{
 	position: absolute;
-	top: 220px;
-	left: 5%;
+	top: 165px;
+	left: 1%;
 	border: 1px solid black;
 	width: 150px;
 	height: 100%;
