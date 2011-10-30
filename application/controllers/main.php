@@ -53,4 +53,51 @@ class Main extends MY_Controller {
 		$data['gallery'] = $this->Show_model->get_what_to_show_in_gallery('gallery');
 		$this->load->view('show_page', $data);
 	}
+	
+	public function send_contactform(){
+		$this->load->library('email');
+		$config['mailtype'] = 'html';
+
+		$this->email->initialize($config);
+		$this->form_validation->set_rules(
+			'title',
+			'Ämne',
+			'required'
+		);
+		$this->form_validation->set_rules(
+			'content',
+			'Meddelande',
+			'required'
+		);
+		$this->form_validation->set_rules(
+			'email',
+			'Email',
+			'required'
+		);
+		if($this->form_validation->run() == False){
+			$this->load->view('show_contactform');
+		} else {
+		$email = $this->input->post('email');
+		$subject = $this->input->post('title');
+		$message = $this->input->post('content');
+		$phone = $this->input->post('phone');
+
+
+		$this->email->from($email, 'Your Name');
+		$this->email->to('linda.lickander@gmail.com'); 
+
+		$this->email->subject($subject);
+		$this->email->message($message . "<br /><br />Mejl: $email Telefon: $phone");	
+		
+		
+
+		$this->email->send();
+
+		echo $this->email->print_debugger();
+			if($this->Main_model->save_contactform($subject, $message, $email, $phone)){
+				echo '<div class="content_main">Tack för ditt meddelande, vi hör av oss så snart vi kan</div>';
+			}
+		}
+		
+	}
 }

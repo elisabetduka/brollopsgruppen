@@ -28,7 +28,17 @@ class Main_model extends CI_Model {
 				
 			}
 		}
-		
-		
+	}
+	
+	function save_contactform($subject, $message, $email, $phone){
+		$data = array(
+			'title' => $subject,
+			'content' => $message,
+			'email' => $email,
+			'phone' => $phone
+		);
+		if($this->db->insert('contact', $data)){
+			return true;
+		}
 	}
 }

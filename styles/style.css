@@ -195,16 +195,15 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	list-style: none;
 	float: left; 
 	display: block; 
-	margin: 0px 10px; 
+	/*margin: 0px 10px; */
 	position: relative; 
-	padding: 10px; 
+	padding: 0 10px; 
 	width: 160px;
 	text-align: center;
 	display: inline;
 	z-index: 99;
-	
     display: block;  
-    padding: 0 20px;  
+    /*padding: 0 20px; */ 
     border-left: 1px solid rgba(255,255,255,0.1);  
     border-right: 1px solid rgba(0,0,0,0.1);  
     text-align: center;  

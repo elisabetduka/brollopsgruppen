@@ -2,7 +2,7 @@
 echo validation_errors();
 
 
-echo form_open("main/show_contactform");
+echo form_open("main/send_contactform");
 echo '<h2 class="content_header">Kontakta oss!</h2>';
 echo '<div id="contact_form" class="content_main">';
 echo form_label('Ämne', 'title');
