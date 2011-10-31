@@ -173,8 +173,8 @@ class Admin extends MY_Controller {
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '100';
-		$config['max_width']  = '150';
-		$config['max_height']  = '200';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
 
 		$this->load->library('upload', $config);
 		if($this->session->userdata('logged_in')){
