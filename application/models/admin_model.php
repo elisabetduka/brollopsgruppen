@@ -56,9 +56,9 @@ class Admin_model extends CI_Model {
 	
 	function update_sidebar($file_name, $file_path, $position){
 		if($position == 'left'){
-			$position = sidebar_left;
+			$position = 'sidebar_left';
 		} else {
-			$position = sidebar_right;
+			$position = 'sidebar_right';
 		}
 		$data = array(
 			'name' => $file_name, 
