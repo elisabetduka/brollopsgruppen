@@ -2,7 +2,7 @@
 //$this->load->view('header');
 ?>
 <div class="content_header">
-	<h2><?php $title = $page[1]->title; echo $title; ?></h2>
+	<h2><?php if($page[1]->id == 1){} else {$title = $page[1]->title; echo $title;} ?></h2>
 </div>
 <div class="content_main">
 	<p><?php $content = $page[1]->content; echo $content; ?></p>

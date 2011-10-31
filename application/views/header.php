@@ -28,7 +28,7 @@ $link = strstr($header['image'][1]->imglink, 'brollopsgruppen');
 ?>
 	<div class="header">
 		<img class="backgr" src="/brollopsgruppen/images/wedding-dresses27.jpg" />
-		<a href="<?php if($main != 'main page'){echo $url_base_admin;} else {echo $url_base;}?>"><img class="logotyp" src="/<?php echo $link;?>" alt="Bröllopsgruppen" /></a>
+		<a href="<?php if($main != 'main page'){echo $url_base_admin;} else {echo $url_base . 'main/show_page/1';}?>"><img class="logotyp" src="/<?php echo $link;?>" alt="Bröllopsgruppen" /></a>
 	</div>
 <?php 
 
@@ -85,7 +85,7 @@ if($logged_in['msg'] != NULL && $main != 'main page'){
 
 <div id="menu">
 	<ul id="main_nav">
-		<a href="<?php echo $url_base;?>"><li>HEM</li></a>
+		<a href="<?php echo $url_base_main;?>/show_page/1"><li>HEM</li></a>
 		<a href="<?php echo $url_base_main;?>/show_gallery/"><li>GALLERI</li></a>
 		<a href="<?php echo $url_base_main;?>/show_questions/"><li>INTRESSEANMÄLAN</li></a>
 		<a href="<?php echo $url_base_main;?>/show_page/3"><li>OM BRÖLLOPSGRUPPEN</li></a>

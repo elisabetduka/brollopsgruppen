@@ -12,7 +12,7 @@ class Main extends MY_Controller {
 	}
 
 	public function index(){
-		$this->load->view('main_page');
+		$this->show_page(1);
 	}
 	
 	public function show_page($id){
