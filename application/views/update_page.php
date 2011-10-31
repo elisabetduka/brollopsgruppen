@@ -35,30 +35,36 @@ echo form_open('admin/save_gallery');
 $exploded_id = '';
 foreach($gallery as $gallery){
 	$ids = $gallery->image_ids;
+	print_r($ids);
 	$exploded_id = explode(",", $ids);
 }
-$number = count($exploded_id);
-$number = $number - 1;
+
 foreach($show_gallery as $gallery){
+	$number = count($exploded_id);
+	$number = $number - 1;
 	$img_link = strstr($gallery->imglink, 'brollopsgruppen');
 	$id = $gallery->id;
 	echo "<img src='/$img_link'>";
 	echo '<br />';
-	if($exploded_id != ''){
-		if($exploded_id[$number] == $id){
-			$checked = 'checked="checked"';
-		} else {
-			$checked = '';
+	$checked = '';
+	for($i = 0; $i < count($show_gallery); $i++){
+		if($checked != 'checked="checked"'){
+			if($exploded_id != ''){
+				if($exploded_id[$number] == $id){
+					$checked = 'checked="checked"';
+				} else {
+					$checked = '';
+				}
+			} 
+			if($number >= 1){
+				$number--;
+			}
 		}
-	} else {
-			$checked = '';
 	}
 	echo "<input type='checkbox' name='image[]' value='$id' $checked>";
 	echo '<br />';
 	echo '<br />';
-if($number >= 1){
-	$number--;
-}
+
 
 }
 if($show_gallery != NULL){

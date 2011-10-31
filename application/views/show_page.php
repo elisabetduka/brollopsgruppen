@@ -12,21 +12,27 @@
 				$ids = $gallery->image_ids;
 				$exploded_id = explode(",", $ids);
 			}
-			$number = count($exploded_id);
-			$number = $number - 1;
+			
 			foreach($show_gallery as $gallery){
+				$number = count($exploded_id);
+				$number = $number - 1;
 				$img_link = strstr($gallery->imglink, 'brollopsgruppen');
 				$id = $gallery->id;
-				
 				echo '<br />';
-				if($exploded_id != ''){
-					if($exploded_id[$number] == $id){
-						echo "<img src='/$img_link'>";
-					} 
+				$checked = '';
+				for($i = 0; $i < count($show_gallery); $i++){
+					if($checked != 'checked'){
+						if($exploded_id != ''){
+							if($exploded_id[$number] == $id){
+								$checked = 'checked';
+								echo "<img src='/$img_link'>";
+							} 
+						}
+						if($number >= 1){
+							$number--;
+						}
+					}
 				}
-			if($number >= 1){
-				$number--;
-			}
 
 			}
 		}
