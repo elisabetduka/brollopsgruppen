@@ -25,7 +25,7 @@
 						if($exploded_id != ''){
 							if($exploded_id[$number] == $id){
 								$checked = 'checked';
-								echo "<img src='/$img_link'>";
+								echo "<img src='/$img_link' max-width='320px;'>";
 							} 
 						}
 						if($number >= 1){

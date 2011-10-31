@@ -1,15 +1,16 @@
-<div class="content_header">
+	<div class="content_header">
 	<h2>Updatera <?php if($position == 'left'){echo 'vänster';} else {echo 'höger';}?> sidebar</h2>
 </div>
 <div class="content_main">
 <?php 
 
 echo form_open('admin/save_sidebar/'.$position);
-
+$exploded_id = "";
 foreach($show_sidebar as $side){
 $ids = $side->image_ids;
 	$exploded_id = explode(",", $ids);
 }
+
 $number = count($exploded_id);
 $number = $number - 1;
 foreach($sidebar as $bar){
