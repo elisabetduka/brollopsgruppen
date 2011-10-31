@@ -11,6 +11,10 @@ padding: 0;
     src: url(/brollopsgruppen/fonts/CharisSILI.ttf) format("truetype");    
 }
 
+textarea{
+	border: 1px solid #2E2D2A;
+}
+
 b, strong{
 	font-family: CharisSILB;
 }
@@ -298,6 +302,19 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	margin-top: 50px;
 }
 
+#contact_form {
+	background-image: url('/brollopsgruppen/images/contact_background.jpg');
+	background-repeat: no-repeat;
+	background-position:center; 
+	width: 700px;
+	height: 500px;
+}
+
+#contact_form form{
+	padding-left: 100px;
+	padding-top: 80px;
+}
+
 .wrap {
 	position:relative;
 	min-width:700px;
@@ -354,6 +371,10 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	padding-bottom: 20px;
 }
 
+.right_sidebar img{
+	padding-top: 10px;
+}
+
 .left_sidebar{
 	position: absolute;
 	top: 165px;
@@ -364,4 +385,8 @@ background: transparent url(header_bkg.png) repeat-x scroll top center;}*/
 	margin: 10px;
 	float: left;
 	padding-bottom: 20px
+}
+
+.left_sidebar img{
+	padding-top: 5px;
 }
