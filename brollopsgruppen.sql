@@ -17,8 +17,23 @@ CREATE TABLE `contact` (
   `email` varchar(200) COLLATE utf8_bin NOT NULL,
   `phone` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+INSERT INTO `contact` (`id`, `title`, `content`, `email`, `phone`) VALUES
+(1,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(2,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(3,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(4,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(5,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(6,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(7,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(8,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(9,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(10,	'Testar ',	'Testar kontaktformuläret',	'linda.lickander@gmail.com',	'0707515621'),
+(11,	'Test',	'Testar för att se om html funkar och för att se att tack meddelandet blir bra!',	'linda.lickander@gmail.com',	''),
+(12,	'Test',	'Testar för att se om html funkar och för att se att tack meddelandet blir bra!',	'linda.lickander@gmail.com',	'0707515621'),
+(13,	'Test',	'Testar för att se om html funkar och för att se att tack meddelandet blir bra!',	'linda.lickander@gmail.com',	'0707515621'),
+(14,	'Test',	'Testar för att se om html funkar och för att se att tack meddelandet blir bra!',	'linda.lickander@gmail.com',	'0707515621');
 
 DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
@@ -56,6 +71,17 @@ CREATE TABLE `footer` (
 INSERT INTO `footer` (`content`) VALUES
 ('Bröllopsgruppen 2011 | info@brollopsgruppen.se | <b>Tel:</b> 08 - 10 20 30');
 
+DROP TABLE IF EXISTS `gallery`;
+CREATE TABLE `gallery` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(250) COLLATE utf8_bin NOT NULL,
+  `image_ids` varchar(250) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `gallery` (`id`, `type`, `image_ids`) VALUES
+(1,	'gallery',	'9,8,7');
+
 DROP TABLE IF EXISTS `image`;
 CREATE TABLE `image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -64,36 +90,24 @@ CREATE TABLE `image` (
   `type` enum('header','sidebar_left','sidebar_right','gallery') COLLATE utf8_bin NOT NULL,
   `importance` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT INTO `image` (`id`, `name`, `imglink`, `type`, `importance`) VALUES
-(1,	'brollopsgruppen-logo21.jpg',	'C:/wamp/www/brollopsgruppen/uploads/brollopsgruppen-logo21.jpg',	'header',	0),
+(1,	'brollopsgruppen-logo21.png',	'C:/wamp/www/brollopsgruppen/uploads/brollopsgruppen-logo21.png',	'header',	0),
 (2,	'ny1.png',	'C:/wamp/www/brollopsgruppen/uploads/ny1.png',	'sidebar_right',	1),
 (3,	'next1.png',	'C:/wamp/www/brollopsgruppen/uploads/next1.png',	'sidebar_right',	1),
-(4,	'previous1.png',	'C:/wamp/www/brollopsgruppen/uploads/previous1.png',	'sidebar_right',	1);
-
-DROP TABLE IF EXISTS `image_image_position`;
-CREATE TABLE `image_image_position` (
-  `imgage_id` int(10) unsigned NOT NULL,
-  `image_position_id` int(11) NOT NULL,
-  KEY `imgage_id` (`imgage_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
-INSERT INTO `image_image_position` (`imgage_id`, `image_position_id`) VALUES
-(1,	1);
-
-DROP TABLE IF EXISTS `image_position`;
-CREATE TABLE `image_position` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
-INSERT INTO `image_position` (`id`, `name`) VALUES
-(1,	'header'),
-(2,	'gallery'),
-(3,	'left'),
-(4,	'right');
+(4,	'previous1.png',	'C:/wamp/www/brollopsgruppen/uploads/previous1.png',	'sidebar_right',	1),
+(5,	'next5.png',	'C:/wamp/www/brollopsgruppen/uploads/next5.png',	'sidebar_right',	0),
+(6,	'next8.png',	'C:/wamp/www/brollopsgruppen/uploads/next8.png',	'gallery',	0),
+(7,	'6_188181981.jpg',	'C:/wamp/www/brollopsgruppen/uploads/6_188181981.jpg',	'gallery',	0),
+(8,	'24_559051841.jpg',	'C:/wamp/www/brollopsgruppen/uploads/24_559051841.jpg',	'gallery',	0),
+(9,	'MG_0315-2-352x5281.jpg',	'C:/wamp/www/brollopsgruppen/uploads/MG_0315-2-352x5281.jpg',	'gallery',	0),
+(10,	'24_559051843.jpg',	'C:/wamp/www/brollopsgruppen/uploads/24_559051843.jpg',	'sidebar_left',	0),
+(11,	'Marie_Trogstam_och_Kevin_Rabenius_red_11.jpg',	'C:/wamp/www/brollopsgruppen/uploads/Marie_Trogstam_och_Kevin_Rabenius_red_11.jpg',	'sidebar_left',	0),
+(12,	'MG_0315-2-352x5283.jpg',	'C:/wamp/www/brollopsgruppen/uploads/MG_0315-2-352x5283.jpg',	'sidebar_left',	0),
+(13,	'Marie_Trogstam_och_Kevin_Rabenius_red_13.jpg',	'C:/wamp/www/brollopsgruppen/uploads/Marie_Trogstam_och_Kevin_Rabenius_red_13.jpg',	'sidebar_right',	0),
+(14,	'24_559051845.jpg',	'C:/wamp/www/brollopsgruppen/uploads/24_559051845.jpg',	'sidebar_right',	0),
+(15,	'MG_0315-2-352x5285.jpg',	'C:/wamp/www/brollopsgruppen/uploads/MG_0315-2-352x5285.jpg',	'sidebar_right',	0);
 
 DROP TABLE IF EXISTS `page`;
 CREATE TABLE `page` (
@@ -126,10 +140,11 @@ CREATE TABLE `sidebar` (
   `type` varchar(255) COLLATE utf8_bin NOT NULL,
   `image_ids` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT INTO `sidebar` (`id`, `type`, `image_ids`) VALUES
-(1,	'sidebar_right',	'3,2');
+(1,	'sidebar_right',	'15,14,13'),
+(2,	'sidebar_left',	'12,11,10');
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -138,7 +153,7 @@ CREATE TABLE `user` (
   `email` varchar(200) COLLATE utf8_bin NOT NULL,
   `salt` varchar(200) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT INTO `user` (`id`, `password`, `email`, `salt`) VALUES
 (8,	'$2a$08$u2JStRjaVOaf/62j1Qj0UeMs2cIjBY9qBbczoEH9ZAhlb1ybs2g4i',	'linda.lickander@gmail.com',	''),
@@ -147,6 +162,7 @@ INSERT INTO `user` (`id`, `password`, `email`, `salt`) VALUES
 (11,	'00442d97b610983f84f90e9b3914c60e210cee753cbeeca987555bd173b279e50a91b8a7c810b6d0c3231bd243c65900b181f7cb31ded93ee8207967507c8a8c',	'linda.lickander3@gmail.com',	'1295789193'),
 (12,	'$2a$08$ozDPKuUpNcNXVcwnrXO91ebFWzBuvvuaVZ0O6yIfm.wfc5dGRK4ge',	'linda.lickander4@gmail.com',	''),
 (13,	'$2a$08$4agbhWjMxLnIL1ju4wiCcOKA4P.1TFi90pZ9KgxNRZUdN2jLVFgIC',	'linda.lickander5@gmail.com',	''),
-(14,	'$2a$08$MZC9Kx05nun7t4Y.CRekwen.yc9AXpFWbBKhrzZz63du2tF5E7hSS',	'hillamed3@gmail.com',	'');
+(14,	'$2a$08$MZC9Kx05nun7t4Y.CRekwen.yc9AXpFWbBKhrzZz63du2tF5E7hSS',	'hillamed3@gmail.com',	''),
+(15,	'$2a$08$VulWTdeXr4sN9w2SFrzo0OCSaJp9rtZGovtDHfCVuDnnym0jQGXta',	'linda.lickander6@gmail.com',	'');
 
--- 2011-10-28 12:04:26
+-- 2011-10-31 16:14:24
