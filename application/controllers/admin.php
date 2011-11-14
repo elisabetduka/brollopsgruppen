@@ -53,6 +53,7 @@ class Admin extends MY_Controller {
 				$data['logged_in']['content'] = $this->Show_model->get_footer_content();
 				$this->load->view('update_footer', $data);
 			} else if($this->Admin_model->update_footer($this->input->post('content'))){
+				$this->session->set_flashdata('message', '<div class="content_main">Footern är nu uppdaterad</div>');
 				redirect(base_url().'admin', 'refresh');
 			}
 		} else {
@@ -83,7 +84,8 @@ class Admin extends MY_Controller {
 			if($this->form_validation->run() == FALSE){
 				$data['logged_in']['content'] = $this->Show_model->get_page_content($id);
 				$this->load->view('update_page', $data);
-			} else if($this->Admin_model->update_page($id, $this->input->post('title'), $this->input->post('content'))){
+			} else if($this->Admin_model->update_page($id, $this->input->post('title'), $this->input->post('content'))){ 
+				$this->session->set_flashdata('message', '<div class="content_main">Sidan är nu uppdaterad</div>');
 				redirect(base_url().'admin', 'refresh');
 			}
 		} else {
@@ -133,6 +135,7 @@ class Admin extends MY_Controller {
 			} else if($this->upload->do_upload()){
 				$file_information = $this->upload->data();
 				if($this->Admin_model->update_header($file_information['file_name'], $file_information['full_path'], $position = 'header')){
+					$this->session->set_flashdata('message', '<div class="content_main">Headern är nu uppdaterad</div>');
 					redirect(base_url().'admin', 'refresh');
 				}
 			}
@@ -160,6 +163,7 @@ class Admin extends MY_Controller {
 			} else if($this->upload->do_upload()){
 				$file_information = $this->upload->data();
 				if($this->Admin_model->update_sidebar($file_information['file_name'], $file_information['full_path'], $position)){
+					$this->session->set_flashdata('message', '<div class="content_main">Sidebaren är nu uppdaterad</div>');
 					redirect(base_url().'admin', 'refresh');
 				}
 			}
@@ -188,6 +192,7 @@ class Admin extends MY_Controller {
 			} else if($this->upload->do_upload()){
 				$file_information = $this->upload->data();
 				if($this->Admin_model->update_gallery($file_information['file_name'], $file_information['full_path'], 'gallery')){
+					$this->session->set_flashdata('message', '<div class="content_main">Galleriet är nu uppdaterad</div>');
 					redirect(base_url().'admin', 'refresh');
 				}
 			}
@@ -204,6 +209,7 @@ class Admin extends MY_Controller {
 				$img[] = $image;
 			}
 			if($this->Admin_model->save_sidebar($img, $position)){
+				$this->session->set_flashdata('message', '<div class="content_main">Sidebaren är nu uppdaterad</div>');
 				redirect(base_url().'admin', 'refresh');
 			}
 		} else {
@@ -219,6 +225,7 @@ class Admin extends MY_Controller {
 				$img[] = $image;
 			}
 			if($this->Admin_model->save_gallery($img, 'gallery')){
+				$this->session->set_flashdata('message', '<div class="content_main">Galleriet är nu uppdaterad</div>');
 				redirect(base_url().'admin', 'refresh');
 			}
 		} else {
@@ -243,6 +250,7 @@ class Admin extends MY_Controller {
 				$data['questions'] = $this->Show_model->get_questions();
 				$this->load->view('create_questions', $data);
 			} else if($this->Admin_model->create_question($this->input->post('question'), $this->input->post('category'))){
+				$this->session->set_flashdata('message', '<div class="content_main">Frågan är nu sparad</div>');
 				redirect(base_url().'admin', 'refresh');
 			}
 		} else {
@@ -254,6 +262,7 @@ class Admin extends MY_Controller {
 		if($this->session->userdata('logged_in')){
 			$data['logged_in']['msg'] = 'logged in';
 			if($this->Admin_model->delete_question($id)){
+				$this->session->set_flashdata('message', '<div class="content_main">Frågan är nu raderad</div>');
 				redirect(base_url().'admin', 'refresh');
 			}
 		} else {
